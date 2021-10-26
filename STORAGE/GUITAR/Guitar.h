@@ -1,10 +1,9 @@
 #pragma once
 #include <string>
-#include "../Storage.h"
-// #include "../Storage.cpp"
+#include "../Commodity.h"
 using namespace std;
 
-class Guitar : public Storage{
+class Guitar : public Commodity{
     private:
         string brand;
         string warrantyTime;

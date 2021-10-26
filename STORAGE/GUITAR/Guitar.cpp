@@ -1,6 +1,6 @@
 #include "Guitar.h"
 
-Guitar::Guitar(string ID, string brand, string name, int quantity, int price, string warrantyTime) :Storage(ID, name, quantity, price) {
+Guitar::Guitar(string ID, string brand, string name, int quantity, int price, string warrantyTime) :Commodity(ID, name, quantity, price) {
     this->brand = brand;
     this->warrantyTime = warrantyTime;
 }

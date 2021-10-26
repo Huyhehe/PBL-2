@@ -1,22 +1,10 @@
 #pragma once
-#include <string>
-using namespace std;
-
+#include "GUITAR/Guitar.h"
+#include "ACCESSORY/Accessory.h"
 class Storage {
     private:
-        string ID;
-        string name;
-        int quantity;
-        int price;
+        Guitar* guitar;
+        Accessory* accessory;
     public:
-        Storage(string, string, int, int);
-        ~Storage();
-        void setID(string);
-        void setName(string);
-        void setQuantity(int);
-        void setPrice(int);
-        string getID();
-        string getName();
-        int getQuantity();
-        int getPrice();
+        //...
 };

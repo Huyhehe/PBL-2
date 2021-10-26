@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
-#include "../Storage.h"
+#include "../Commodity.h"
 using namespace std;
 
-class Accessory : public Storage {
+class Accessory : public Commodity {
     public:
         Accessory(string, string, int, int);
         ~Accessory();
