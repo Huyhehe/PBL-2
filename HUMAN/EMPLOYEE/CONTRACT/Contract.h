@@ -8,6 +8,7 @@ class Contract {
         string dateOut;
         bool isFullTime;
     public:
+        Contract();
         Contract(string, string, bool);
         ~Contract();
         void Contract_setDateIn(string);

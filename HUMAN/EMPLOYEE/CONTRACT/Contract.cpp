@@ -11,7 +11,7 @@ void Contract::Contract_setDateIn(string dateIn) {
 void Contract::Contract_setDateOut(string dateOut) {
     this->dateOut = dateOut;
 }
-void Contact::Contract_setIsFullTime(bool isFullTime) {
+void Contract::Contract_setIsFullTime(bool isFullTime) {
     this->isFullTime = isFullTime;
 }
 
