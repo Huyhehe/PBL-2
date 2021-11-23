@@ -3,12 +3,13 @@
 using namespace std;
 
 class Commodity {
-    private:
+    protected:
         string ID;
         string name;
         int quantity;
         int price;
     public:
+        Commodity();
         Commodity(string, string, int, int);
         ~Commodity();
         void setID(string);

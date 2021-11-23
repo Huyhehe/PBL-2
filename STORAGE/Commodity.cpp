@@ -1,7 +1,17 @@
 #include "Commodity.h"
 
-Commodity::Commodity(string ID, string name, int quantity, int price) : ID(ID), name(name), quantity(quantity), price(price) {}
-Commodity::~Commodity(){}
+Commodity::Commodity() {
+
+}
+
+Commodity::Commodity(string ID, string name, int quantity, int price) 
+    : ID(ID), name(name), quantity(quantity), price(price) {
+
+}
+Commodity::~Commodity(){
+
+}
+
 void Commodity::setID(string ID) {
     this->ID = ID;
 }
