@@ -1,10 +1,10 @@
 #include "Human.h"
 
 Human::Human(){}
-Human::Human(string ID, string name, string phoneNumber, string address, string email, string sex, int age)
-: ID(ID), name(name), phoneNumber(phoneNumber), address(address), email(email), sex(sex), age(age){}
+Human::Human(string ID, string name, string phoneNumber, string address, string email, string gender, int age)
+    : ID(ID), name(name), phoneNumber(phoneNumber), address(address), email(email), gender(gender), age(age){}
 Human::Human(string ID, string name, string phoneNumber, string address, string email)
-: ID(ID), name(name), phoneNumber(phoneNumber), address(address), email(email){}
+    : ID(ID), name(name), phoneNumber(phoneNumber), address(address), email(email){}
 Human::~Human(){}
 
 void Human::setID(string ID) {
@@ -22,8 +22,8 @@ void Human::setAddress(string address) {
 void Human::setEmail(string mail) {
     this->email = email;
 }
-void Human::setSex(string sex) {
-    this->sex = sex;
+void Human::setGender(string gender) {
+    this->gender = gender;
 }
 void Human::setAge(int age) {
     this->age = age;
@@ -44,8 +44,8 @@ string Human::getAddress() {
 string Human::getEmail() {
     return email;
 }
-string Human::getSex() {
-    return sex;
+string Human::getGender() {
+    return gender;
 }
 int Human::getAge() {
     return age;

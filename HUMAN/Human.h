@@ -9,7 +9,7 @@ class Human {
         string phoneNumber;
         string address;
         string email;
-        string sex;
+        string gender;
         int age;
     public:
         Human();
@@ -21,13 +21,13 @@ class Human {
         void setPhoneNumber(string);
         void setAddress(string);
         void setEmail(string);
-        void setSex(string);
+        void setGender(string);
         void setAge(int);
         string getID();
         string getName();
         string getPhoneNumber();
         string getAddress();
         string getEmail();
-        string getSex();
+        string getGender();
         int getAge(); 
 };

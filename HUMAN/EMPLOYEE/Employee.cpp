@@ -1,6 +1,7 @@
 #include "Employee.h"
 
-Employee::Employee(string ID, string name, int age, string sex, string phoneNumber, string address, string email, Contract contract, long salary) :Human(ID, name, phoneNumber, address, email, sex, age){
+Employee::Employee(string ID, string name, int age, string gender, string phoneNumber, string address, string email, Contract contract, long salary) 
+    : Human(ID, name, phoneNumber, address, email, gender, age){
     this->salary = salary;
     this->contract = contract;
 }
