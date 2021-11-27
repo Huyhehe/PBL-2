@@ -5,7 +5,9 @@ using namespace std;
 
 Storage::Storage() {
     this->numberOfAccessory = 0;
+    this->guitar = nullptr;
     this->numberOfGuitar = 0;
+    this->accessory = nullptr;
 }
 
 Storage::~Storage() {
