@@ -1,9 +1,9 @@
 #include "Human.h"
 
 Human::Human(){}
-Human::Human(string ID, string name, string phoneNumber, string address, string email, string gender, int age)
-    : ID(ID), name(name), phoneNumber(phoneNumber), address(address), email(email), gender(gender), age(age){}
-Human::Human(string ID, string name, string phoneNumber, string address, string email)
+Human::Human(string ID, string name, int age, string phoneNumber, string email, string address, string gender)
+    : ID(ID), name(name), phoneNumber(phoneNumber), email(email), address(address), gender(gender), age(age){}
+Human::Human(string ID, string name, string phoneNumber, string email, string address)
     : ID(ID), name(name), phoneNumber(phoneNumber), address(address), email(email){}
 Human::~Human(){}
 
@@ -19,7 +19,7 @@ void Human::setPhoneNumber(string phoneNumber) {
 void Human::setAddress(string address) {
     this->address = address;
 }
-void Human::setEmail(string mail) {
+void Human::setEmail(string email) {
     this->email = email;
 }
 void Human::setGender(string gender) {
@@ -29,24 +29,24 @@ void Human::setAge(int age) {
     this->age = age;
 }
 
-string Human::getID() {
-    return ID;
+string Human::getID() const {
+    return this->ID;
 }
-string Human::getName() {
-    return name;
+string Human::getName() const {
+    return this->name;
 }
-string Human::getPhoneNumber() {
-    return phoneNumber;
+string Human::getPhoneNumber() const {
+    return this->phoneNumber;
 }
-string Human::getAddress() {
-    return address;
+string Human::getAddress() const {
+    return this->address;
 }
-string Human::getEmail() {
-    return email;
+string Human::getEmail() const {
+    return this->email;
 }
-string Human::getGender() {
-    return gender;
+string Human::getGender() const {
+    return this->gender;
 }
-int Human::getAge() {
-    return age;
+int Human::getAge() const {
+    return this->age;
 }

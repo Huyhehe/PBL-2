@@ -13,7 +13,7 @@ class Human {
         int age;
     public:
         Human();
-        Human(string, string, string, string, string, string, int);
+        Human(string, string, int,string, string, string, string);
         Human(string, string, string, string, string);
         ~Human();
         void setID(string);
@@ -23,11 +23,11 @@ class Human {
         void setEmail(string);
         void setGender(string);
         void setAge(int);
-        string getID();
-        string getName();
-        string getPhoneNumber();
-        string getAddress();
-        string getEmail();
-        string getGender();
-        int getAge(); 
+        string getID() const;
+        string getName() const;
+        string getPhoneNumber() const;
+        string getAddress() const;
+        string getEmail() const;
+        string getGender() const;
+        int getAge() const; 
 };

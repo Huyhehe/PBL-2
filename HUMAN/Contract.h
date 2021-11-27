@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <iostream>
+
 using namespace std;
 
 class Contract {
@@ -17,4 +19,7 @@ class Contract {
         string Contract_getDateIn();
         string Contract_getDateOut();
         bool Contract_getIsFullTime();
+        bool operator==(const Contract&);
+        const Contract& operator=(const Contract&);
+        friend ostream& operator<<(ostream&, const Contract&);
 };
