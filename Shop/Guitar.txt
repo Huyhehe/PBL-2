@@ -1,0 +1,13 @@
+Ma: 1022003
+Thuong hieu: Epiphone
+Ten: DR-100
+So luong: 4
+Gia: 3000000
+Thoi gian bao hanh: 1 nam
+
+Ma: 1022004
+Thuong hieu: Yamaha
+Ten: FT-300
+So luong: 6
+Gia: 4000000
+Thoi gian bao hanh: 1 nam

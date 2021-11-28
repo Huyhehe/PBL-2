@@ -10,9 +10,29 @@ Storage::Storage() {
     this->accessory = nullptr;
 }
 
+Storage::Storage(const Storage& s) {
+    this->numberOfGuitar = 0;
+    this->guitar = new Guitar[s.numberOfGuitar];
+    for (int i = 0; i < s.numberOfGuitar; i++)
+        this->push(*(s.guitar + i));
+
+    this->numberOfAccessory = 0;
+    this->accessory = new Accessory[s.numberOfAccessory];
+    for (int i = 0; i < s.numberOfAccessory; i++)
+        this->push(*(s.accessory + i));
+}
+
 Storage::~Storage() {
     delete[] guitar;
     delete[] accessory;
+}
+
+int Storage::getNumberOfGuitar() const {
+    return this->numberOfGuitar;
+}
+
+int Storage::getNumberOfAccessory() const {
+    return this->numberOfAccessory;
 }
 
 void Storage::push(Guitar newGuitar) {

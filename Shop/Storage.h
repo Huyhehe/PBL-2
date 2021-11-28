@@ -9,7 +9,10 @@ class Storage {
         int numberOfAccessory;
     public:
         Storage();
+        Storage(const Storage&);
         ~Storage();
+        int getNumberOfGuitar() const;
+        int getNumberOfAccessory() const;
         void push(Guitar);
         void push(Accessory);
         void shift(Guitar);
