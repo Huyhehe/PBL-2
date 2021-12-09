@@ -56,46 +56,47 @@ void EmployeeManager::shift(Employee newEmp) {
 int EmployeeManager::indexOf(string s, string option, int startIndex) {
     if (option == "ID") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getID() == emp->getID())
+            if ((this->emp + i)->getID() == s)
                 return i;
     }
 
     if (option == "Name") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getName() == emp->getName())
+            if ((this->emp + i)->getName() == s) 
                 return i;
     }
 
     if (option == "Gender") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getGender() == emp->getGender())
+            if ((this->emp + i)->getGender() == s)
                 return i;
     }
 
     if (option == "Phone") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getPhoneNumber() == emp->getPhoneNumber())
+            if ((this->emp + i)->getPhoneNumber() == s)
                 return i;
     }
 
     if (option == "Email") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getEmail() == emp->getEmail())
+            if ((this->emp + i)->getEmail() == s)
                 return i;
     }
     
     if (option == "Address") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getAddress() == emp->getAddress())
-                return i;
-    }
-    
-    if (option == "Contract") {
-        for (int i = startIndex; i < this->numberOfEmployee; i++)
-            if ((this->emp + i)->getContract() == emp->getContract())
+            if ((this->emp + i)->getAddress() == s)
                 return i;
     }
 
+    return -1;
+}
+
+int EmployeeManager::indexOf(const Contract& cont) {
+    for (int i = 0; i < this->numberOfEmployee; i++)
+        if ((this->emp + i)->getContract() == cont)
+            return i;
     return -1;
 }
 
@@ -104,7 +105,7 @@ int EmployeeManager::indexOf(const Employee& emp) {
 }
 
 void EmployeeManager::update(Employee currentEmp, Employee newEmp) {
-    int index = indexOf(currentEmp);
+    int index = this->indexOf(currentEmp);
 
     if (index < 0)
         return;
@@ -161,7 +162,7 @@ void EmployeeManager::sort(string option) {
     if (option == "Age") {
         for (int i = 0; i < this->numberOfEmployee - 1; i++)
             for (int j = 0; j < this->numberOfEmployee - i - 1; j++)
-                if ((this->emp + j)->getAge() > (this->emp + j + 1)->getAge())
+                if ((this->emp + j)->getDateOfBirth() > (this->emp + j + 1)->getDateOfBirth())
                     swap(*(this->emp + j), *(this->emp + j + 1));
     }
     
@@ -178,6 +179,10 @@ void EmployeeManager::sort(string option) {
                 if ((this->emp + j)->getSalary() > (this->emp + j + 1)->getSalary())
                     swap(*(this->emp + j), *(this->emp + j + 1));
     }
+}
+
+Employee& EmployeeManager::operator[](int index) {
+    return *(this->emp + index);
 }
 
 ostream& operator<<(ostream& out, const EmployeeManager& e) {

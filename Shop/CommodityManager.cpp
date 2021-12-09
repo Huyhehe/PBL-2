@@ -1,41 +1,49 @@
-#include "Storage.h"
+#include "CommodityManager.h"
 #include <iostream>
 
 using namespace std;
 
-Storage::Storage() {
+CommodityManager::CommodityManager() {
     this->numberOfAccessory = 0;
     this->guitar = nullptr;
     this->numberOfGuitar = 0;
     this->accessory = nullptr;
 }
 
-Storage::Storage(const Storage& s) {
+CommodityManager::CommodityManager(const CommodityManager& commodity) {
     this->numberOfGuitar = 0;
-    this->guitar = new Guitar[s.numberOfGuitar];
-    for (int i = 0; i < s.numberOfGuitar; i++)
-        this->push(*(s.guitar + i));
+    this->guitar = new Guitar[commodity.numberOfGuitar];
+    for (int i = 0; i < commodity.numberOfGuitar; i++)
+        this->push(*(commodity.guitar + i));
 
     this->numberOfAccessory = 0;
-    this->accessory = new Accessory[s.numberOfAccessory];
-    for (int i = 0; i < s.numberOfAccessory; i++)
-        this->push(*(s.accessory + i));
+    this->accessory = new Accessory[commodity.numberOfAccessory];
+    for (int i = 0; i < commodity.numberOfAccessory; i++)
+        this->push(*(commodity.accessory + i));
 }
 
-Storage::~Storage() {
+CommodityManager::~CommodityManager() {
     delete[] guitar;
     delete[] accessory;
 }
 
-int Storage::getNumberOfGuitar() const {
+int CommodityManager::getNumberOfGuitar() const {
     return this->numberOfGuitar;
 }
 
-int Storage::getNumberOfAccessory() const {
+int CommodityManager::getNumberOfAccessory() const {
     return this->numberOfAccessory;
 }
 
-void Storage::push(Guitar newGuitar) {
+Guitar& CommodityManager::getGuitar(int index) const {
+    return *(this->guitar + index);
+}
+
+Accessory& CommodityManager::getAccessory(int index) const {
+    return *(this->accessory + index);
+}
+
+void CommodityManager::push(Guitar newGuitar) {
     if (this->numberOfGuitar == 0) {
         this->guitar = new Guitar[this->numberOfGuitar + 1];
         *(this->guitar + this->numberOfGuitar) = newGuitar;
@@ -51,10 +59,10 @@ void Storage::push(Guitar newGuitar) {
         *(this->guitar + this->numberOfGuitar) = newGuitar;
     }
 
-    this->numberOfGuitar += 1;   
+    this->numberOfGuitar += 1;
 }
 
-void Storage::push(Accessory newAccessory) {
+void CommodityManager::push(Accessory newAccessory) {
     if (this->numberOfAccessory == 0) {
         this->accessory = new Accessory[this->numberOfAccessory + 1];
         *(this->accessory + this->numberOfAccessory) = newAccessory;
@@ -70,10 +78,10 @@ void Storage::push(Accessory newAccessory) {
         *(this->accessory + this->numberOfAccessory) = newAccessory;
     }
 
-    this->numberOfAccessory += 1;   
+    this->numberOfAccessory += 1;
 }
 
-void Storage::shift(Guitar newGuitar) {
+void CommodityManager::shift(Guitar newGuitar) {
     if (this->guitar == 0) {
         this->guitar = new Guitar[this->numberOfGuitar + 1];
         *(this->guitar + this->numberOfGuitar) = newGuitar;
@@ -93,7 +101,7 @@ void Storage::shift(Guitar newGuitar) {
     this->numberOfGuitar += 1;
 }
 
-void Storage::shift(Accessory newAccessory) {
+void CommodityManager::shift(Accessory newAccessory) {
     if (this->accessory == 0) {
         this->accessory = new Accessory[this->numberOfAccessory + 1];
         *(this->accessory + this->numberOfGuitar) = newAccessory;
@@ -113,7 +121,7 @@ void Storage::shift(Accessory newAccessory) {
     this->numberOfAccessory += 1;
 }
 
-int Storage::indexOf(string s, string option, string commodity) {
+int CommodityManager::indexOf(string s, string option, string commodity) const {
     if (commodity == "Guitar") {
         if (option == "ID") {
             for (int i = 0; i < this->numberOfGuitar; i++)
@@ -157,7 +165,7 @@ int Storage::indexOf(string s, string option, string commodity) {
     return -1;
 }
 
-int Storage::indexOf(Guitar guitar) {
+int CommodityManager::indexOf(Guitar guitar) const {
     for (int i = 0; i < this->numberOfGuitar; i++) {
         if ((this->guitar + i)->getID() == guitar.getID())
             return i;
@@ -166,47 +174,47 @@ int Storage::indexOf(Guitar guitar) {
     return -1;
 }
 
-int Storage::indexOf(Accessory accessory) {
+int CommodityManager::indexOf(Accessory accessory) const {
     for (int i = 0; i < this->numberOfAccessory; i++) {
         if ((this->accessory + i)->getID() == accessory.getID())
             return i;
     }
-    
+
     return -1;
 }
 
-void Storage::update(Guitar guitar, Guitar newGuitar) {
+void CommodityManager::update(Guitar guitar, Guitar newGuitar) {
     int index = indexOf(guitar);
 
-    if (index < 0) 
+    if (index < 0)
         return;
 
     *(this->guitar + index) = newGuitar;
 }
 
-void Storage::update(Accessory accessory, Accessory newAccessory) {
+void CommodityManager::update(Accessory accessory, Accessory newAccessory) {
     int index = indexOf(accessory);
 
-    if (index < 0) 
+    if (index < 0)
         return;
 
     *(this->accessory + index) = newAccessory;
 }
 
-void Storage::deleteAt(int index, string commodity) {
+void CommodityManager::deleteAt(int index, string commodity) {
     if (commodity == "Guitar") {
-        if (index < 0 || index >= this->numberOfGuitar) 
+        if (index < 0 || index >= this->numberOfGuitar)
             return;
-        
+
         for (int i = index; i < this->numberOfGuitar - 1; i++)
             *(this->guitar + i) = *(this->guitar + i + 1);
-        
+
         Guitar *temp = new Guitar[this->numberOfGuitar - 1];
 
         for (int i = 0; i < this->numberOfGuitar - 1; i++)
             *(temp + i) = *(this->guitar + i);
         delete[] this->guitar;
-        
+
         if (this->numberOfGuitar > 1) {
             this->guitar = new Guitar[this->numberOfGuitar - 1];
             for (int i = 0; i < this->numberOfGuitar - 1; i++)
@@ -216,9 +224,9 @@ void Storage::deleteAt(int index, string commodity) {
     }
 
     if (commodity == "Accessory") {
-        if (index < 0 || index >= this->numberOfAccessory) 
+        if (index < 0 || index >= this->numberOfAccessory)
             return;
-        
+
         for (int i = index; i < this->numberOfAccessory - 1; i++)
             *(this->accessory + i) = *(this->accessory + i + 1);
 
@@ -237,19 +245,19 @@ void Storage::deleteAt(int index, string commodity) {
     }
 }
 
-void Storage::deleteGuitar(Guitar guitar) {
+void CommodityManager::deleteGuitar(Guitar guitar) {
     int index = indexOf(guitar);
-    if (index < 0 || index >= this->numberOfGuitar) 
+    if (index < 0 || index >= this->numberOfGuitar)
         return;
-    
+
     for (int i = index; i < this->numberOfGuitar - 1; i++)
         *(this->guitar + i) = *(this->guitar + i + 1);
-    
+
     Guitar *temp = new Guitar[this->numberOfGuitar - 1];
     for (int i = 0; i < this->numberOfGuitar - 1; i++)
         *(temp + i) = *(this->guitar + i);
     delete[] this->guitar;
-    
+
     if (this->numberOfGuitar > 1) {
         this->guitar = new Guitar[this->numberOfGuitar - 1];
         for (int i = 0; i < this->numberOfGuitar - 1; i++)
@@ -258,12 +266,12 @@ void Storage::deleteGuitar(Guitar guitar) {
     this->numberOfGuitar--;
 }
 
-void Storage::deleteAccessory(Accessory accessory) {
+void CommodityManager::deleteAccessory(Accessory accessory) {
     int index = indexOf(accessory);
 
-    if (index < 0 || index >= this->numberOfAccessory) 
+    if (index < 0 || index >= this->numberOfAccessory)
         return;
-    
+
     for (int i = index; i < this->numberOfAccessory - 1; i++)
         *(this->accessory + i) = *(this->accessory + i + 1);
 
@@ -281,19 +289,19 @@ void Storage::deleteAccessory(Accessory accessory) {
     this->numberOfAccessory--;
 }
 
-void Storage::swap(Guitar& g1, Guitar& g2) {
+void CommodityManager::swap(Guitar& g1, Guitar& g2) {
     Guitar temp = g1;
     g1 = g2;
     g2 = temp;
 }
 
-void Storage::swap(Accessory& a1, Accessory& a2) {
+void CommodityManager::swap(Accessory& a1, Accessory& a2) {
     Accessory temp = a1;
     a1 = a2;
     a2 = temp;
 }
 
-void Storage::sort(string commodity, string option) {
+void CommodityManager::sort(string commodity, string option) {
     if (commodity == "Guitar") {
         if (option == "ID") {
             for (int i = 0; i < this->numberOfGuitar - 1; i++)
@@ -374,13 +382,53 @@ void Storage::sort(string commodity, string option) {
     }
 }
 
-void Storage::show() {
+void CommodityManager::showGuitarName() const {
     for (int i = 0; i < this->numberOfGuitar; i++) {
-        cout << *(this->guitar + i);
-        cout << "------------------------" << endl;
+        cout << " --- " << (this->guitar + i)->getBrand() << " " <<(this->guitar + i)->getName() << endl;
     }
-    for (int i = 0; i < this->numberOfAccessory; i++) {
-        cout << *(this->accessory + i);
-        cout << "------------------------" << endl;
+}
+
+void CommodityManager::showAccessoryName() const {
+    for (int i = 0; i < this->numberOfAccessory; i++)
+        cout << " --- " << (this->accessory + i)->getName() << endl;
+}
+
+bool CommodityManager::hasGuitar() {
+    if (this->numberOfGuitar > 0)
+        return true;
+    return false;
+}
+
+bool CommodityManager::hasAccessory() {
+    if (this->numberOfAccessory > 0)
+        return true;
+    return false;
+}
+
+const CommodityManager& CommodityManager::operator=(const CommodityManager& commodity) {
+    this->numberOfGuitar = 0;
+    this->guitar = new Guitar[commodity.numberOfGuitar];
+    for (int i = 0; i < commodity.numberOfGuitar; i++)
+        this->push(*(commodity.guitar + i));
+
+    this->numberOfAccessory = 0;
+    this->accessory = new Accessory[commodity.numberOfAccessory];
+    for (int i = 0; i < commodity.numberOfAccessory; i++)
+        this->push(*(commodity.accessory + i));
+
+    return *this;
+}
+
+ostream& operator<<(ostream& out, const CommodityManager& commodity){
+    for (int i = 0; i < commodity.numberOfGuitar; i++) {
+        out << *(commodity.guitar + i);
+        out << "------------------------" << endl;
     }
+
+    for (int i = 0; i < commodity.numberOfAccessory; i++) {
+        out << *(commodity.accessory + i);
+        out << "------------------------" << endl;
+    }
+
+    return out;
 }

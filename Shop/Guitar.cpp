@@ -28,11 +28,11 @@ void Guitar::setWarrantyTime(string warrantyTime) {
     this->warrantyTime = warrantyTime;
 }
 
-string Guitar::getBrand() {
+string Guitar::getBrand() const {
     return brand;
 }
 
-string Guitar::getWarrantyTime() {
+string Guitar::getWarrantyTime() const {
     return warrantyTime;
 }
 

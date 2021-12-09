@@ -4,8 +4,8 @@ Employee::Employee() {
 
 }
 
-Employee::Employee(string ID, string name, int age, string gender, string phoneNumber, string email, string address, Contract contract, long salary) 
-    : Human(ID, name, age, phoneNumber, email, address, gender){
+Employee::Employee(string ID, string name, Date date, string gender, string phoneNumber, string email, string address, Contract contract, long salary) 
+    : Human(ID, name, date, phoneNumber, email, address, gender){
     this->salary = salary;
     this->contract = contract;
 }
@@ -38,7 +38,7 @@ Contract Employee::getContract() const {
 const Employee& Employee::operator=(const Employee& emp) {
     this->setID(emp.getID());
     this->setName(emp.getName());
-    this->setAge(emp.getAge());
+    this->setDateOfBirth(emp.getDateOfBirth());
     this->setGender(emp.getGender());
     this->setPhoneNumber(emp.getPhoneNumber());
     this->setEmail(emp.getEmail());
@@ -51,7 +51,7 @@ const Employee& Employee::operator=(const Employee& emp) {
 ostream& operator<<(ostream& out, const Employee& emp) {
     out << "Ma nhan vien: " << emp.getID() << endl;
     out << "Ten nhan vien: " << emp.getName() << endl;
-    out << "Tuoi: " << emp.getAge() << endl;
+    out << "Tuoi: " << emp.getDateOfBirth() << endl;
     out << "Gioi tinh: " << emp.getGender() << endl;
     out << "So dien thoai: " << emp.getPhoneNumber() << endl;
     out << "Email: " << emp.getEmail() << endl;

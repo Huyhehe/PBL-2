@@ -1,19 +1,20 @@
 #pragma once
 #include <string>
+#include "Date.h"
 using namespace std;
 
 class Human {
     private:
         string ID;
         string name;
+        Date dateOfBirth;
         string phoneNumber;
         string address;
         string email;
         string gender;
-        int age;
     public:
         Human();
-        Human(string, string, int,string, string, string, string);
+        Human(string, string, Date, string, string, string, string);
         Human(string, string, string, string, string);
         ~Human();
         void setID(string);
@@ -22,12 +23,13 @@ class Human {
         void setAddress(string);
         void setEmail(string);
         void setGender(string);
-        void setAge(int);
+        void setDateOfBirth(int, int, int);
+        void setDateOfBirth(const Date&);
         string getID() const;
         string getName() const;
         string getPhoneNumber() const;
         string getAddress() const;
         string getEmail() const;
         string getGender() const;
-        int getAge() const; 
+        Date getDateOfBirth() const;
 };

@@ -23,7 +23,7 @@ Accessory::~Accessory(){
     
 }
 
-string Accessory::getWarrantyTime() {
+string Accessory::getWarrantyTime() const {
     return this->warrantyTime;
 }
 
@@ -31,7 +31,7 @@ void Accessory::setWarrantyTime(string warrantyTime) {
     this->warrantyTime = warrantyTime;
 }
 
-string Accessory::getTypeOfCommodity() {
+string Accessory::getTypeOfCommodity() const {
     return this->typeOfCommodity;
 }
 

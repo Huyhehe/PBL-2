@@ -15,8 +15,8 @@ class Guitar : public Commodity{
         ~Guitar();
         void setBrand(string);
         void setWarrantyTime(string);
-        string getBrand();
-        string getWarrantyTime();
+        string getBrand() const;
+        string getWarrantyTime() const;
         friend ostream& operator<<(ostream&, const Guitar&);
         const Guitar& operator=(const Guitar&);
 };

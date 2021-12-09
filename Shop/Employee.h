@@ -12,7 +12,7 @@ class Employee : public Human{
         long salary = 4000000; //base salary for full-time employee in VND
     public:
         Employee();
-        Employee(string, string, int, string, string, string, string, Contract, long);
+        Employee(string, string, Date, string, string, string, string, Contract, long);
         ~Employee();
         void setSalary();
         long getSalary() const;

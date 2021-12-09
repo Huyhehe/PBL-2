@@ -4,7 +4,7 @@ Contract::Contract() {
 
 }
 
-Contract::Contract(string dateIn, string dateOut, bool isFullTime) 
+Contract::Contract(Date dateIn, Date dateOut, bool isFullTime) 
     : dateIn(dateIn), dateOut(dateOut), isFullTime(isFullTime) {
 
 }
@@ -13,11 +13,11 @@ Contract::~Contract() {
 
 }
 
-void Contract::Contract_setDateIn(string dateIn) {
+void Contract::Contract_setDateIn(Date dateIn) {
     this->dateIn = dateIn;
 }
 
-void Contract::Contract_setDateOut(string dateOut) {
+void Contract::Contract_setDateOut(Date dateOut) {
     this->dateOut = dateOut;
 }
 
@@ -25,16 +25,16 @@ void Contract::Contract_setIsFullTime(bool isFullTime) {
     this->isFullTime = isFullTime;
 }
 
-string Contract::Contract_getDateIn() {
-    return dateIn;
+Date Contract::Contract_getDateIn() const {
+    return this->dateIn;
 }
 
-string Contract::Contract_getDateOut() {
-    return dateOut;
+Date Contract::Contract_getDateOut() const {
+    return this->dateOut;
 }
 
-bool Contract::Contract_getIsFullTime() {
-    return isFullTime;
+bool Contract::Contract_getIsFullTime() const {
+    return this->isFullTime;
 }
 
 bool Contract::operator==(const Contract& cont) {
