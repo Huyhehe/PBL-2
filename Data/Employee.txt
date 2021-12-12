@@ -1,0 +1,23 @@
+ID : 102230113
+Ten nhan vien: Nguyen Kim
+Ngay sinh: 10/01/1999
+Gioi tinh: nam
+So dien thoai: 0905111203
+Email: nguyenkim.kt@gmail.com
+Dia chi: 13 Hoang Hoa Tham, Thanh Khe, Da Nang
+Ngay bat dau lam viec: 12/04/2019
+Ngay het hop dong lam viec: 12/04/2023
+La nhan vien toan thoi gian: true
+Tien luong: 5000000
+
+ID : 102230114
+Ten nhan vien: Hoang Thai Linh
+Ngay sinh: 2/5/2000
+Gioi tinh: nam
+So dien thoai: 0905121211
+Email: linhhoang.tl@gmail.com
+Dia chi: 8 Binh Minh 3, Hai Chau, Da Nang
+Ngay bat dau lam viec: 9/3/2020
+Ngay het hop dong lam viec: 8/4/2022
+La nhan vien toan thoi gian: false
+Tien luong: 3000000

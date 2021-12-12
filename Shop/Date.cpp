@@ -6,8 +6,16 @@ Date::Date() {
     this->year = 0;
 }
 
-Date::Date(int day, int month, int year) : day(day), month(month), year(year) {
-
+Date::Date(int day, int month, int year) {
+    if (day <= 31 && day >= 1)
+        this->day = day;
+    else
+        this->day = 0;
+    if (month <= 12 && month >= 1)
+        this->month = month;
+    else
+        this->month = 0;
+    this->year = year;
 }
 
 Date::Date(const Date& date) {
