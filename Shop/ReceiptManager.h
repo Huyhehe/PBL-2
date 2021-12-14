@@ -12,6 +12,7 @@
          ReceiptManager();
          ReceiptManager(const ReceiptManager&);
          ~ReceiptManager();
+         int getNumberOfReceipt();
          void insert(Receipt, int);
          void push(Receipt);
          void shift(Receipt);

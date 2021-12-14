@@ -11,6 +11,7 @@ class Receipt {
         string customerName;
         CommodityManager commodity;
         Date date;
+        int totalMoney = 0;
     public:
         Receipt();
         Receipt(string, string, CommodityManager, Date);
@@ -21,8 +22,10 @@ class Receipt {
         string getCustomerName() const;
         void setCustomerName(string);
         CommodityManager getCommodity() const;
-        void addCommodity(const Guitar&);
-        void addCommodity(const Accessory&);
+        void addCommodity(const Guitar&, int);
+        void addCommodity(const Accessory&, int);
+        void calculatorTotalMoney();
+        void setTotalMoney(int);
         int getTotalMoney() const;
         Date getDate() const;
         void setDate(const Date&);

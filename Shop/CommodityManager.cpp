@@ -81,6 +81,11 @@ void CommodityManager::push(Accessory newAccessory) {
     this->numberOfAccessory += 1;
 }
 
+void CommodityManager::pushWithQuantity(Guitar newGuitar, int quantity) {
+    this->push(newGuitar);
+    (this->guitar + this->numberOfGuitar - 1)->setQuantity(quantity);
+}
+
 void CommodityManager::shift(Guitar newGuitar) {
     if (this->guitar == 0) {
         this->guitar = new Guitar[this->numberOfGuitar + 1];
@@ -99,6 +104,11 @@ void CommodityManager::shift(Guitar newGuitar) {
     }
 
     this->numberOfGuitar += 1;
+}
+
+void CommodityManager::pushWithQuantity(Accessory newAccessory, int quantity) {
+    this->push(newAccessory);
+    (this->accessory + this->numberOfAccessory - 1)->setQuantity(quantity);
 }
 
 void CommodityManager::shift(Accessory newAccessory) {
@@ -121,22 +131,22 @@ void CommodityManager::shift(Accessory newAccessory) {
     this->numberOfAccessory += 1;
 }
 
-int CommodityManager::indexOf(string s, string option, string commodity) const {
+int CommodityManager::indexOf(string s, string option, string commodity, int startIndex) const {
     if (commodity == "Guitar") {
         if (option == "ID") {
-            for (int i = 0; i < this->numberOfGuitar; i++)
+            for (int i = startIndex; i < this->numberOfGuitar; i++)
                 if ((this->guitar + i)->getID() == s)
                     return i;
         }
 
         if (option == "Name") {
-            for (int i = 0; i < this->numberOfGuitar; i++)
+            for (int i = startIndex; i < this->numberOfGuitar; i++)
                 if ((this->guitar + i)->getName() == s)
                     return i;
         }
 
         if (option == "Brand") {
-            for (int i = 0; i < this->numberOfGuitar; i++)
+            for (int i = startIndex; i < this->numberOfGuitar; i++)
                 if ((this->guitar + i)->getBrand() == s)
                     return i;
         }
@@ -144,19 +154,19 @@ int CommodityManager::indexOf(string s, string option, string commodity) const {
 
     if (commodity == "Accessory") {
         if (option == "ID") {
-            for (int i = 0; i < this->numberOfAccessory; i++)
+            for (int i = startIndex; i < this->numberOfAccessory; i++)
                 if ((this->accessory + i)->getID() == s)
                     return i;
         }
 
         if (option == "Name") {
-            for (int i = 0; i < this->numberOfAccessory; i++)
+            for (int i = startIndex; i < this->numberOfAccessory; i++)
                 if ((this->accessory + i)->getName() == s)
                     return i;
         }
 
         if (option == "Type") {
-            for (int i = 0; i < this->numberOfAccessory; i++)
+            for (int i = startIndex; i < this->numberOfAccessory; i++)
                 if ((this->accessory + i)->getTypeOfCommodity() == s)
                     return i;
         }

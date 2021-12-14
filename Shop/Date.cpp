@@ -119,3 +119,11 @@ ostream& operator<<(ostream& out, const Date& date) {
     cout << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
     return out;
 }
+
+Date stringToDate(string str) {
+    string day = str.substr(0, str.find("/"));
+    str = str.substr(str.find("/") + 1, str.length());
+    string month = str.substr(0, str.find("/"));
+    string year = str.substr(str.find("/") + 1, str.length());
+    return Date(stoi(day), stoi (month), stoi(year));
+}

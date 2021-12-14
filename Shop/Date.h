@@ -27,4 +27,7 @@ class Date {
         bool operator==(const Date&);
         const Date& operator=(const Date&);
         friend ostream& operator<<(ostream&, const Date&);
+        friend Date stringToDate(string);
 };
+
+Date stringToDate(string);

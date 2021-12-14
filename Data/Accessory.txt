@@ -11,3 +11,24 @@ Ten san pham: Pick Elise
 so luong: 25
 Gia: 20000
 Thoi gian bao hanh: Khong bao hanh
+
+Ma 100225
+Loai phu kien: Pick
+Ten san pham: Pick Nour
+So luong: 10
+Gia: 10000
+Thoi gian bao hanh: Khong bao hanh
+
+Ma 100226
+Loai phu kien: Capo
+Ten san pham: Capo Shark
+So luong: 5
+Gia: 120000
+Thoi gian bao hanh: Khong bao hanh
+
+Ma 100227
+Loai phu kien: Pick
+Ten san pham: Pick Fender
+So luong: 10
+Gia: 10000
+Thoi gian bao hanh: Khong bao hanh

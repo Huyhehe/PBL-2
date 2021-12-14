@@ -17,6 +17,10 @@ ReceiptManager::~ReceiptManager() {
     delete[] this->receipt;
 }
 
+int ReceiptManager::getNumberOfReceipt() {
+    return this->numberOfReceipt;
+}
+
 void ReceiptManager::push(Receipt newRpt) {
     if (this->numberOfReceipt == 0) {
         this->receipt = new Receipt[this->numberOfReceipt + 1];
@@ -163,23 +167,21 @@ ostream& operator<<(ostream& out, const ReceiptManager& r) {
 }
 
 void ReceiptManager::addReceipt(const Receipt& rpt, CommodityManager& commodityManager) {
-    if (this->numberOfReceipt == 1) {
-        this->receipt = new Receipt[this->numberOfReceipt + 2];
-        *(this->receipt + this->numberOfReceipt) = rpt;
-    } else {
-        Receipt *temp = new Receipt[this->numberOfReceipt];
-        for (int i = 1; i < this->numberOfReceipt; i++)
-            *(temp + i) = *(this->receipt + i);
-        delete[] this->receipt;
+    if (rpt.getCommodity().hasGuitar() && !commodityManager.hasGuitar())
+        return;
+    if (rpt.getCommodity().hasAccessory() && !commodityManager.hasAccessory())
+        return;
 
-        this->receipt = new Receipt[this->numberOfReceipt + 2];
-        for (int i = 1; i < this->numberOfReceipt; i++) {
-            *(this->receipt + i + 2) = *(temp + i);
-        }
-        *(this->receipt) = rpt;
-    }
+    if (rpt.getCommodity().hasGuitar() && commodityManager.hasGuitar())
+        for (int i = 0; i < rpt.getCommodity().getNumberOfGuitar(); i++)
+            if (commodityManager.indexOf(rpt.getCommodity().getGuitar(i)) == -1)
+                return;
+    if (rpt.getCommodity().hasAccessory() && commodityManager.hasAccessory())
+        for (int i = 0; i < rpt.getCommodity().getNumberOfAccessory(); i++)
+            if (commodityManager.indexOf(rpt.getCommodity().getAccessory(i)) == -1)
+                return;
 
-    this->numberOfReceipt += 1;
+    this->push(rpt);
 
     if (commodityManager.hasGuitar()) {
         for (int i = 0; i < rpt.getCommodity().numberOfGuitar; i++) {

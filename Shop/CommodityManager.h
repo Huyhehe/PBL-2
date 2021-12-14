@@ -19,12 +19,14 @@ class CommodityManager {
         Guitar& getGuitar(int) const;
         Accessory& getAccessory(int) const;
         void push(Guitar);
+        void pushWithQuantity(Guitar, int);
         void push(Accessory);
+        void pushWithQuantity(Accessory, int);
         void shift(Guitar);
         void shift(Accessory);
         int indexOf(Guitar) const;
         int indexOf(Accessory) const;
-        int indexOf(string, string, string) const;
+        int indexOf(string, string, string, int = 0) const;
         void update(Guitar, Guitar);
         void update(Accessory, Accessory);
         void deleteAt(int, string);

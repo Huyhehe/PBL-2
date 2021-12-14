@@ -21,3 +21,39 @@ Ngay bat dau lam viec: 9/3/2020
 Ngay het hop dong lam viec: 8/4/2022
 La nhan vien toan thoi gian: false
 Tien luong: 3000000
+
+ID : 102230123
+Ten nhan vien: Nguyen Kim
+Ngay sinh: 2/5/1999
+Gioi tinh: nam
+So dien thoai: 0905128819
+Email: hienvan.99@gmail.com
+Dia chi: 24 Hoang Thi Loan, Lien Chieu, Da Nang
+Ngay bat dau lam viec: 9/3/2019
+Ngay het hop dong lam viec: 8/4/2023
+La nhan vien toan thoi gian: true
+Tien luong: 5000000
+
+ID : 102230918
+Ten nhan vien: Bui Ngoc Truc
+Ngay sinh: 2/5/1998
+Gioi tinh: Nu
+So dien thoai: 0905199012
+Email: ngoctruc.b98@gmail.com
+Dia chi: 199 Hoang Dieu, Hai Chau, Da Nang
+Ngay bat dau lam viec: 9/3/2017
+Ngay het hop dong lam viec: 8/4/2014
+La nhan vien toan thoi gian: true
+Tien luong: 10000000
+
+ID : 102230882
+Ten nhan vien: Dao Mai Anh
+Ngay sinh: 2/5/2000
+Gioi tinh: Nu
+So dien thoai: 090512182
+Email: anhanhdao.m2000@gmail.com
+Dia chi: 19 Dong Ke, Lien Chieu, Da Nang
+Ngay bat dau lam viec: 9/3/2020
+Ngay het hop dong lam viec: 8/4/2022
+La nhan vien toan thoi gian: false
+Tien luong: 3000000

@@ -18,11 +18,18 @@ class EmployeeManager {
         int indexOf(const Employee&);
         int indexOf(string, string = "ID", int = 0);
         int indexOf(const Contract&);
+        int indexOfStatus(bool, int = 0);
+        int indexOf(long, int = 0);
         void update(Employee, Employee);
+        void update(string, string, string);
+        void updateSalary(long);
         void remove(int);
         void remove(Employee);
         void swap(Employee&, Employee&);
         void sort(string);
         Employee& operator[](int);
+        const EmployeeManager& operator=(const EmployeeManager&);
         friend ostream& operator<<(ostream&, const EmployeeManager&);
+        friend istream& operator>>(istream&, EmployeeManager&);
+        const EmployeeManager& findAllEmployee(string, string = "ID");
 };

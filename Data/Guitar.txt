@@ -5,9 +5,32 @@ So luong: 4
 Gia: 3000000
 Thoi gian bao hanh: 1 nam
 
+
+
 Ma: 1022004
 Thuong hieu: Yamaha
 Ten: FT-300
 So luong: 6
 Gia: 4000000
+Thoi gian bao hanh: 1 nam
+
+Ma: 1022291
+Thuong hieu: Martin&Co
+Ten: D-200
+So luong: 3
+Gia: 12590000
+Thoi gian bao hanh: 2 nam
+
+Ma: 1022881
+Thuong hieu: Fender
+Ten: CD-100
+So luong: 4
+Gia: 7000000
+Thoi gian bao hanh: 1 nam
+
+Ma: 1022221
+Thuong hieu: Takamine
+Ten: C-520
+So luong: 8
+Gia: 5690000
 Thoi gian bao hanh: 1 nam
