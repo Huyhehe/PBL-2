@@ -5,6 +5,7 @@
 #include <windows.h>
 using namespace std;
 
+string toString(int x);
 string setColor(int color);
 void employeeBoard(string inputFile);
 void accessoryBoard(string inputFile);
@@ -225,7 +226,6 @@ void employeeMenu() {
         }
         case 2: {
             system("cls");
-            // system("Color 0A");
             cout << "Xoa nhan vien thanh cong" << endl
                  << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -240,7 +240,6 @@ void employeeMenu() {
         }
         case 3: {
             system("cls");
-            // system("Color 0A");
             employeeBoard("../Data/Employee.txt");
             cout << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -378,7 +377,6 @@ void guitarMenu() {
     switch(intChoice) {
         case 1: {
             system("cls");
-            // system("Color 0A");
             guitarBoard("../Data/Guitar.txt");
             cout << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -393,7 +391,6 @@ void guitarMenu() {
         }
         case 2: {
             system("cls");
-            // system("Color 0A");
             cout << "Nhap ten loai dan ban muon tim: " << endl
                  << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -408,7 +405,6 @@ void guitarMenu() {
         }
         case 3: {
             system("cls");
-            // system("Color 0A");
             // them vao kho
             cout << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -423,7 +419,6 @@ void guitarMenu() {
         }
         case 4: {
             system("cls");
-            // system("Color 0A");
             // xoa khoi kho
             cout << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -576,6 +571,7 @@ void accessoryMenu() {
 
 void employeeBoard(string inputFile) {
     struct empProp {
+        int index;
         string ID;
         string name;
         string ngaysinh;
@@ -592,17 +588,19 @@ void employeeBoard(string inputFile) {
     struct empProp arr[100];
     int i = 0;
     int j = 0;
+    int h = 1;
     ifstream infile;
     infile.open(inputFile, ios::in);
-    cout << "+----------+------------------------------+-----------+----+-----------+" << endl; //10, 30, 11, 4, 11 
-    cout << "|    ID    |            Ho ten            | Ngay sinh | GT |    SDT    |" << endl;
-    cout << "+----------+------------------------------+-----------+----+-----------+" << endl;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl; //5, 10, 30, 11, 4, 11 
+    cout << "| STT |    ID    |            Ho ten            | Ngay sinh | GT |    SDT    |" << endl;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
     while (!infile.eof()) {
         getline(infile, str);
         if (str == "") {
             i = 0;
             continue;
         }
+        arr[j].index = h;
         switch(i) {
             case 0: {
                 str = str.substr(str.find(":") + 2, str.length());
@@ -669,6 +667,7 @@ void employeeBoard(string inputFile) {
                 arr[j].salary = str;
                 i = 0;
                 j++;
+                h++;
                 break;
             }
             default: break;
@@ -676,18 +675,21 @@ void employeeBoard(string inputFile) {
     }
     int k = j;
     for (j = 0 ; j < k ; j++) {
-        cout << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
+        cout << "|" << toString(arr[j].index) << arr[j].index << setw(toString(arr[j].index).length
+        () + 1)
+             << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
              << "|" << arr[j].name << setw(31 - arr[j].name.length()) 
              << "|" << arr[j].ngaysinh << setw(12 - arr[j].ngaysinh.length()) 
              << "|" << arr[j].gentle << setw(5 - arr[j].gentle.length())
              << "|" << arr[j].phoneNum << setw(12 - arr[j].phoneNum.length()) << "|" << endl;
     }
-    cout << "+----------+------------------------------+-----------+----+-----------+" << endl;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
     infile.close();
 }
 
 void guitarBoard(string inputFile) {
     struct empProp {
+        int index;
         string ID;
         string name;
         string brand;
@@ -699,17 +701,19 @@ void guitarBoard(string inputFile) {
     struct empProp arr[100];
     int i = 0;
     int j = 0;
+    int h = 1;
     ifstream infile;
     infile.open(inputFile, ios::in);
-    cout << "+----------+-------------------+-----------+----+------------+----------+" << endl; //10, 19, 11, 4, 12, 10
-    cout << "|    ID    |    Thuong hieu    |    Ten    | SL |  Gia tien  | Bao hanh |" << endl;
-    cout << "+----------+-------------------+-----------+----+------------+----------+" << endl;
+    cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl; //5, 10, 19, 11, 4, 12, 10
+    cout << "| STT |    ID    |    Thuong hieu    |    Ten    | SL |  Gia tien  | Bao hanh |" << endl;
+    cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl;
     while (!infile.eof()) {
         getline(infile, str);
         if (str == "") {
             i = 0;
             continue;
         }
+        arr[j].index = h;
         switch(i) {
             case 0: {
                 str = str.substr(str.find(":") + 2, str.length());
@@ -746,6 +750,7 @@ void guitarBoard(string inputFile) {
                 arr[j].warrantyTime = str;
                 i = 0;
                 j++;
+                h++;
                 break;
             }
             default: break;
@@ -753,19 +758,22 @@ void guitarBoard(string inputFile) {
     }
     int k = j;
     for (j = 0 ; j < k ; j++) {
-        cout << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
+        cout << "|" << toString(arr[j].index) << arr[j].index << setw(toString(arr[j].index).length
+        () + 1)
+             << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
              << "|" << arr[j].brand << setw(20 - arr[j].brand.length()) 
              << "|" << arr[j].name << setw(12 - arr[j].name.length()) 
              << "|" << arr[j].amount << setw(5 - arr[j].amount.length())
              << "|" << arr[j].price << setw(13 - arr[j].price.length())
              << "|" << arr[j].warrantyTime << setw(11 - arr[j].warrantyTime.length()) << "|" << endl;
     }
-    cout << "+----------+-------------------+-----------+----+------------+----------+" << endl;
+    cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl;
     infile.close();
 }
 
 void accessoryBoard(string inputFile) {
     struct empProp {
+        int index;
         string ID;
         string name;
         string type;
@@ -777,17 +785,19 @@ void accessoryBoard(string inputFile) {
     struct empProp arr[100];
     int i = 0;
     int j = 0;
+    int h = 1;
     ifstream infile;
     infile.open(inputFile, ios::in);
-    cout << "+----------+------------+-------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
-    cout << "|    ID    |    Loai    |     Ten     | SL |  Gia tien  |    Bao hanh    |" << endl;
-    cout << "+----------+------------+-------------+----+------------+----------------+" << endl;
+    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
+    cout << "| STT |    ID    |    Loai    |     Ten     | SL |  Gia tien  |    Bao hanh    |" << endl;
+    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
     while (!infile.eof()) {
         getline(infile, str);
         if (str == "") {
             i = 0;
             continue;
         }
+        arr[j].index = h;
         switch(i) {
             case 0: {
                 str = str.substr(str.find(":") + 2, str.length());
@@ -824,6 +834,7 @@ void accessoryBoard(string inputFile) {
                 arr[j].warrantyTime = str;
                 i = 0;
                 j++;
+                h++;
                 break;
             }
             default: break;
@@ -831,14 +842,16 @@ void accessoryBoard(string inputFile) {
     }
     int k = j;
     for (j = 0 ; j < k ; j++) {
-        cout << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
+        cout << "|" << toString(arr[j].index) << arr[j].index << setw(toString(arr[j].index).length
+        () + 1)
+             << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
              << "|" << arr[j].type << setw(13 - arr[j].type.length()) 
              << "|" << arr[j].name << setw(14 - arr[j].name.length()) 
              << "|" << arr[j].amount << setw(5 - arr[j].amount.length())
              << "|" << arr[j].price << setw(13 - arr[j].price.length())
              << "|" << arr[j].warrantyTime << setw(17 - arr[j].warrantyTime.length()) << "|" << endl;
     }
-    cout << "+----------+------------+-------------+----+------------+----------------+" << endl;
+    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
     infile.close();
 }
 
@@ -853,4 +866,17 @@ string setColor(int color)
           SetConsoleTextAttribute(out, colr);
      }
      return "";
+}
+
+string toString(int x) {
+    string str;
+    if (x < 10) {
+        str = "00";
+    }
+    else if (x >= 10 && x < 100) {
+        str = "0";
+    } else {
+        str = "";
+    }
+    return str;
 }
