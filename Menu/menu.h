@@ -30,17 +30,16 @@ void mainMenu() {
          << "+                    MAIN MENU                     +" << endl
          << "+ 1. Quan ly                                       +" << endl
          << "+ 2. In hoa don                                    +" << endl
-         << "+ 3. Kiem tra bao hanh                             +" << endl
-         << "+ 4. Thoat                                         +" << endl
+         << "+ 3. Thoat                                         +" << endl
          << "+                                                  +" << endl
          << "+                                                  +" << endl
          << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
     cout << "Nhap lua chon: "; cin >> choice;
-    if (choice.length() > 1 || choice < "1" || choice > "4") {
+    if (choice.length() > 1 || choice < "1" || choice > "3") {
         do {
             cout << setColor(4) << "Lua chon khong hop le, vui long chon lai: " << setColor(255);
             cin >> choice;
-        } while(choice.length() > 1 || choice < "1" || choice > "4");
+        } while(choice.length() > 1 || choice < "1" || choice > "3");
     }
     int intChoice = 0;
     if (choice == "1") {
@@ -51,9 +50,6 @@ void mainMenu() {
     }
     if (choice == "3") {
         intChoice = 3;
-    }
-    if (choice == "4") {
-        intChoice = 4;
     }
     switch(intChoice) {
         case 1: {
@@ -66,11 +62,6 @@ void mainMenu() {
             receiptMenu();
         }
         case 3: {
-            system("cls");
-            // warrantyCheck();
-            break;
-        }
-        case 4: {
             system("cls");
             cout << "DA THOAT!";
             break;
@@ -675,8 +666,7 @@ void employeeBoard(string inputFile) {
     }
     int k = j;
     for (j = 0 ; j < k ; j++) {
-        cout << "|" << toString(arr[j].index) << arr[j].index << setw(toString(arr[j].index).length
-        () + 1)
+        cout << "|" << toString(arr[j].index) << arr[j].index << setw(3)
              << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
              << "|" << arr[j].name << setw(31 - arr[j].name.length()) 
              << "|" << arr[j].ngaysinh << setw(12 - arr[j].ngaysinh.length()) 
@@ -758,8 +748,7 @@ void guitarBoard(string inputFile) {
     }
     int k = j;
     for (j = 0 ; j < k ; j++) {
-        cout << "|" << toString(arr[j].index) << arr[j].index << setw(toString(arr[j].index).length
-        () + 1)
+        cout << "|" << toString(arr[j].index) << arr[j].index << setw(3)
              << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
              << "|" << arr[j].brand << setw(20 - arr[j].brand.length()) 
              << "|" << arr[j].name << setw(12 - arr[j].name.length()) 
@@ -842,8 +831,7 @@ void accessoryBoard(string inputFile) {
     }
     int k = j;
     for (j = 0 ; j < k ; j++) {
-        cout << "|" << toString(arr[j].index) << arr[j].index << setw(toString(arr[j].index).length
-        () + 1)
+        cout << "|" << toString(arr[j].index) << arr[j].index << setw(3)
              << "|" << arr[j].ID << setw(11 - arr[j].ID.length()) 
              << "|" << arr[j].type << setw(13 - arr[j].type.length()) 
              << "|" << arr[j].name << setw(14 - arr[j].name.length()) 
