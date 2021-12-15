@@ -14,6 +14,10 @@ EmployeeManager::~EmployeeManager() {
     delete[] this->emp;
 }
 
+int EmployeeManager::getNumberOfEmployee() const {
+    return this->numberOfEmployee;
+}
+
 void EmployeeManager::push(Employee newEmp) {
     if (this->numberOfEmployee == 0) {
         this->emp = new Employee[this->numberOfEmployee+ 1];
@@ -179,6 +183,164 @@ void EmployeeManager::update(string currentData, string newData, string option) 
     }
 }
 
+void EmployeeManager::updateData(string str, string option) {
+    EmployeeManager emp;
+    if (option != "Name") {
+        if (option == "Full Name")
+            option = "Name";
+        emp = this->findAllEmployee(str, option);
+    } else
+        emp = this->findAllLastName(str);
+    cout << emp;
+    cout << "Ban muon sua doi nhan vien co stt (chon 0 de cap nhat tat ca): ";
+    int index;
+    cin >> index;
+    while (index < 0 || index > emp.getNumberOfEmployee()) {
+        cout << "Lua chon khong phu hop, vui long chon lai: ";
+        cin >> index;
+    }
+    system("cls");
+    cout << "Ban muon chinh sua: " << endl;
+    cout << "1. Chinh sua ID. " << endl;
+    cout << "2. Chinh sua Ten." << endl;
+    cout << "3. Chinh sua ngay sinh." << endl;
+    cout << "4. Chinh sua gioi tinh." << endl;
+    cout << "5. Chinh sua so dien thoai." << endl;
+    cout << "6. Chinh sua email." << endl;
+    cout << "7. Chinh sua dia chi." << endl;
+    cout << "8. Chinh sua ngay bat dau lam viec." << endl;
+    cout << "9. Chinh sua ngay ket thuc hop dong lam viec." << endl;
+    cout << "10. Chinh sua hinh thuc nhan vien((y): full time/(n): part time)." << endl;
+    cout << "11. Chinh sua luong." << endl;
+    cout << "Hay nhap lua chon cua ban: ";
+    int j = 0;
+    cin >> j;
+    while (j < 1 || j > 11) {
+        cout << "Lua chon khong hop le, vui long nhap lai lua chon cua ban: ";
+        cin >> j;
+    }
+    string s;
+    int i = index - 1;
+    bool deleteAll = false;
+    if (index == 0) {
+        deleteAll = true;
+        i = 0;
+    }
+    getline(cin, s);
+    while (i < emp.getNumberOfEmployee()) {
+        switch(j) {
+            case 1: {
+                cout << "Nhap ID moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setID(s);
+                this->update(emp[i], temp);
+                break;
+            }
+            case 2: {
+                cout << "Nhap ho va ten moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setName(s);
+                this->update(emp[i], temp);
+                break;
+            }
+            case 3: {
+                cout << "Nhap ngay sinh moi(dd/mm/yyyy): ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setDateOfBirth(stringToDate(s));
+                this->update(emp[i], temp);
+                break;
+            }
+            case 4: {
+                cout << "Nhap gioi tinh moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setGender(s);
+                this->update(emp[i], temp);
+                break;
+            }
+            case 5: {
+                cout << "Nhap so dien thoai moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setPhoneNumber(s);
+                this->update(emp[i], temp);
+                break;
+            }
+            case 6: {
+                cout << "Nhap Email moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setEmail(s);
+                this->update(emp[i], temp);
+                break;
+            }
+            case 7: {
+                cout << "Nhap dia chi moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setAddress(s);
+                this->update(emp[i], temp);
+                break;
+            }
+            case 8: {
+                cout << "Nhap ngay bat dau lam viec: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setContract(Contract(stringToDate(s), temp.getContract().Contract_getDateOut(), temp.getContract().Contract_getIsFullTime()));
+                this->update(emp[i], temp);
+                break;
+            }
+            case 9: {
+                cout << "Nhap ngay ket thuc hop dong lam viec: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setContract(Contract(temp.getContract().Contract_getDateIn(), stringToDate(s), temp.getContract().Contract_getIsFullTime()));
+                this->update(emp[i], temp);
+                break;
+            }
+            case 10: {
+                cout << "Nhap hinh thuc nhan vien((y): Full Time / (n): Past Time): ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                bool isFullTime;
+                if (s == "y")
+                    isFullTime = true;
+                else
+                    isFullTime = false;
+                temp.setContract(Contract(temp.getContract().Contract_getDateIn(), temp.getContract().Contract_getDateOut(), isFullTime));
+                this->update(emp[i], temp);
+            }
+            case 11: {
+                cout << "Nhap tien luong: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Employee temp = emp[i];
+                temp.setSalary(stol(s));
+                this->update(emp[i], temp);
+            }
+            default:
+                break;
+        }
+        if (deleteAll)
+            i++;
+        else
+            break;
+    }
+}
+
 void EmployeeManager::updateSalary(long salary) {
     int index = this->indexOf(salary);
     (this->emp + index)->setSalary(salary);
@@ -206,8 +368,59 @@ void EmployeeManager::remove(int index) {
 }
 
 void EmployeeManager::remove(Employee emp) {
+    cout << "ok";
     int index = indexOf(emp);
     remove(index);
+}
+
+void EmployeeManager::deleteEmployee(string str, string option) {
+    EmployeeManager emp;
+    if (option != "Name") {
+        if (option == "Full Name")
+            option = "Name";
+        emp = this->findAllEmployee(str, option);
+    } else
+        emp = this->findAllLastName(str);
+    cout << emp;
+    cout << emp.getNumberOfEmployee();
+    cout << "Ban muon xoa nhan vien co stt (chon 0 de xoa tat ca): ";
+    int i;
+    cin >> i;
+    while (i < 0 || i > emp.getNumberOfEmployee()) {
+        cout << "Lua chon sai, vui long nhap lai: ";
+        cin >> i;
+    }
+    if (i == 0) {
+        for (int j = 0; j < emp.getNumberOfEmployee();j++)
+            this->remove(emp[j]);
+        return;
+    }
+    int index = this->indexOf(emp[i - 1]);
+    if (index == -1)
+        return;
+    remove(index);
+}
+
+void EmployeeManager::deleteAllLastName(string name) {
+    EmployeeManager emp = this->findAllLastName(name);
+    int i = 0;
+    while (i < emp.getNumberOfEmployee()) {
+        if (this->indexOf(emp[i]) != -1) {
+            this->remove(emp[i]);
+        }
+        i++;
+    }
+}
+
+void EmployeeManager::deleteAllEmployee(string str, string option) {
+    EmployeeManager emp = this->findAllEmployee(str, option);
+    int i = 0;
+    while (i < emp.getNumberOfEmployee()) {
+        if (this->indexOf(emp[i]) != -1) {
+            this->remove(emp[i]);
+        }
+        i++;
+    }
 }
 
 void EmployeeManager::swap(Employee& emp1, Employee& emp2) {
@@ -229,6 +442,16 @@ void EmployeeManager::sort(string option) {
             for (int j = 0; j < this->numberOfEmployee - i - 1; j++)
                 if ((this->emp + j)->getName() > (this->emp + j + 1)->getName())
                     swap(*(this->emp + j), *(this->emp + j + 1));
+    }
+
+    if (option == "Last Name") {
+        for (int i = 0; i < this->numberOfEmployee - 1; i++)
+            for (int j = 0; j < this->numberOfEmployee - i - 1; j++) {
+                string str = this->getLastName(j);
+                string str1 = this->getLastName(j + 1);
+                if (str > str1)
+                    swap(*(this->emp + j), *(this->emp + j + 1));
+            }
     }
 
     if (option == "Age") {
@@ -355,3 +578,32 @@ const EmployeeManager& EmployeeManager::findAllEmployee(string str, string optio
     return *empManager;
 }
 
+string EmployeeManager::getLastName(int index) {
+    string str = (this->emp + index)->getName();
+    int i = str.length();
+    while (str[i] != ' ') {
+        i--;
+    }
+    str = str.substr(i + 1, str.length() - i);
+    return str;
+}
+
+int EmployeeManager::indexOfLastName(string str, int startIndex) {
+    for (int i = startIndex; i < this->numberOfEmployee; i++)
+        if (this->getLastName(i) == str)
+            return i;
+    return -1;
+}
+
+const EmployeeManager& EmployeeManager::findAllLastName(string str) {
+    EmployeeManager *empManager = new EmployeeManager();
+    int i = 0;
+    int index = 0;
+    index = this->indexOfLastName(str, i);
+    while (index != -1) {
+        empManager->push((*this)[index]);
+        i = index + 1;
+        index = this->indexOfLastName(str, i);
+    }
+    return *empManager;
+}

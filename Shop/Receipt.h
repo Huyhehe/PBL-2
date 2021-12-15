@@ -22,6 +22,7 @@ class Receipt {
         string getCustomerName() const;
         void setCustomerName(string);
         CommodityManager getCommodity() const;
+        CommodityManager& getCommodityManager();
         void addCommodity(const Guitar&, int);
         void addCommodity(const Accessory&, int);
         void calculatorTotalMoney();
@@ -31,4 +32,5 @@ class Receipt {
         void setDate(const Date&);
         friend ostream& operator<<(ostream&, const Receipt&);
         const Receipt& operator=(const Receipt&);
+        friend class CommodityManager;
 };

@@ -45,26 +45,30 @@ void readData(CommodityManager& storage, const string& option, const string& fil
             switch(i) {
                 case 0:
                     temp->setID(strip(getData(str)));
+                    i++;
                     break;
                 case 1:
                     temp->setBrand(strip(getData(str)));
+                    i++;
                     break;
                 case 2:
                     temp->setName(strip(getData(str)));
+                    i++;
                     break;
                 case 3:
                     temp->setQuantity(stoi(strip(getData(str))));
+                    i++;
                     break;
                 case 4:
                     temp->setPrice(stoi(strip(getData(str))));
+                    i++;
                     break;
                 case 5:
                     temp->setWarrantyTime(strip(getData(str)));
+                    i++;
                 default:
                     break;
             }
-
-            i += 1;
         }
     }
 
@@ -84,26 +88,30 @@ void readData(CommodityManager& storage, const string& option, const string& fil
             switch(i) {
                 case 0:
                     temp->setID(strip(getData(str)));
+                    i++;
                     break;
                 case 1:
                     temp->setTypeOfCommodoty(strip(getData(str)));
+                    i++;
                     break;
                 case 2:
                     temp->setName(strip(getData(str)));
+                    i++;
                     break;
                 case 3:
                     temp->setQuantity(stoi(strip(getData(str))));
+                    i++;
                     break;
                 case 4:
                     temp->setPrice(stoi(strip(getData(str))));
+                    i++;
                     break;
                 case 5:
                     temp->setWarrantyTime(strip(getData(str)));
+                    i++;
                 default:
                     break;
             }
-
-            i += 1;
         }
     }
     fileInput.close();
@@ -225,7 +233,7 @@ void readData(ReceiptManager& rptManager, CommodityManager& storage, const strin
             getline(fileInput, str);
         if ((str == "" && i == 6) || (str == "" && i > 0 && i <= 6)) {
             i = 0;
-            rptManager.addReceipt(*temp, storage);
+            rptManager.push(*temp);
             delete temp;
             temp = new Receipt();
             continue;
@@ -252,7 +260,7 @@ void readData(ReceiptManager& rptManager, CommodityManager& storage, const strin
                         int end = str.find("--", start + 1);
                         int quantity = stoi(str.substr(start+ 2, end - start - 3));
                         if (storage.indexOf(tempstr, "ID", "Guitar") != -1)
-                            temp->addCommodity(storage.getGuitar(storage.indexOf(tempstr, "ID", "Guitar")), quantity);
+                            temp->getCommodityManager().pushWithQuantity(storage.getGuitar(storage.indexOf(tempstr, "ID", "Guitar")), quantity);
                     }
                     if (str.find("Accessory") >= 0 && str.find("Accessory") <= str.length()) {
                         string tempstr;
@@ -260,8 +268,7 @@ void readData(ReceiptManager& rptManager, CommodityManager& storage, const strin
                         int start = str.find("--", str.find("--", str.find("--", 0) + 1) + 1);
                         int end = str.find("--", start + 1);
                         int quantity = stoi(str.substr(start+ 2, end - start - 3));
-                        if (storage.indexOf(tempstr, "ID", "Accessory") != -1)
-                            temp->addCommodity(storage.getAccessory(storage.indexOf(tempstr, "ID", "Accessory")), quantity);
+                            temp->getCommodityManager().pushWithQuantity(storage.getAccessory(storage.indexOf(tempstr, "ID", "Accessory")), quantity);
                     }
                     getline(fileInput, str);
                 }
@@ -296,33 +303,32 @@ int main() {
     //EmployeeManager newe;
     //newe = emp.findAllEmployee("88", "ID");
     //cout << newe;
-    //CommodityManager storage;
-    //readData(storage, "Guitar", "../Data/Guitar.txt");
-    //readData(storage, "Accessory", "../Data/Accessory.txt");
-    //cout << storage;
+    CommodityManager storage;
+    readData(storage, "Guitar", "../Data/Guitar.txt");
+    readData(storage, "Accessory", "../Data/Accessory.txt");
 
-    //CommodityManager commodityManager;
-    //Guitar g1(storage.getGuitar(1));
-    //g1.setQuantity(1);
-    //Accessory a1(storage.getAccessory(0));
-    //a1.setQuantity(1);
-    //Accessory a2(storage.getAccessory(1));
-    //a2.setQuantity(2);
-    //commodityManager.push(g1);
-    //commodityManager.push(a1);
-    //commodityManager.push(a2);
-    //Receipt r1("1023123", "Hieu", commodityManager, Date(10, 12, 2021));
-    //Guitar g2(storage.getGuitar(2));
-    //g2.setQuantity(1);
-    //commodityManager.push(g2);
-    //Receipt r2("1022013", "Nam", commodityManager, Date(10, 12, 2020));
-    //ReceiptManager manager;
-    //manager.addReceipt(r1, storage);
-    //manager.addReceipt(r2, storage);
-    //writeData(manager, "../Data/Receipt.txt");
-    //EmployeeManager empManager;
-    //readData(empManager, "../Data/Employee.txt");
-
+    CommodityManager commodityManager;
+    Guitar g1(storage.getGuitar(1));
+    g1.setQuantity(1);
+    Accessory a1(storage.getAccessory(0));
+    a1.setQuantity(1);
+    Accessory a2(storage.getAccessory(1));
+    a2.setQuantity(2);
+    commodityManager.push(g1);
+    commodityManager.push(a1);
+    commodityManager.push(a2);
+    Receipt r1("1023123", "Hieu", commodityManager, Date(10, 12, 2021));
+    Guitar g2(storage.getGuitar(2));
+    g2.setQuantity(1);
+    commodityManager.push(g2);
+    Receipt r2("1022013", "Nam", commodityManager, Date(10, 12, 2020));
+    ReceiptManager manager;
+    manager.addReceipt(r1, storage);
+    manager.addReceipt(r2, storage);
+    writeData(manager, "../Data/Receipt.txt");
+    EmployeeManager empManager;
+    readData(empManager, "../Data/Employee.txt");
+    cout << storage.findAllName("Capo", "Accessory");
 
     //ReceiptManager rpt;
     //readData(rpt, storage, "../Data/Receipt.txt");
@@ -343,7 +349,5 @@ int main() {
     //fi.close();
     EmployeeManager emp;
     readData(emp, "../Data/Employee.txt");
-    EmployeeManager temp = emp.findAllEmployee("Nguyen Kim", "Name");
-    cout << temp;
     return 0;
 }

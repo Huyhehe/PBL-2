@@ -27,6 +27,7 @@ class CommodityManager {
         int indexOf(Guitar) const;
         int indexOf(Accessory) const;
         int indexOf(string, string, string, int = 0) const;
+        int indexOfName(string, string, int = 0);
         void update(Guitar, Guitar);
         void update(Accessory, Accessory);
         void deleteAt(int, string);
@@ -39,6 +40,8 @@ class CommodityManager {
         void showAccessoryName() const;
         bool hasGuitar();
         bool hasAccessory();
+        const CommodityManager& findAllCommodity(string, string, string);
+        const CommodityManager& findAllName(string, string);
         const CommodityManager& operator=(const CommodityManager&);
         friend ostream& operator<<(ostream&, const CommodityManager&);
         friend class ReceiptManager;

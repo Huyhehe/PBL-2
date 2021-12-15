@@ -193,6 +193,24 @@ int CommodityManager::indexOf(Accessory accessory) const {
     return -1;
 }
 
+int CommodityManager::indexOfName(string str, string option, int startIndex) {
+    if (option == "Guitar")
+        for (int i = startIndex; i < this->numberOfGuitar; i++) {
+            string s = this->getGuitar(i).getBrand() + " " +this->getGuitar(i).getName();
+            if (s.find(str) >= 0 && s.find(str) <= s.length())
+                return i;
+        }
+
+    if (option == "Accessory")
+        for (int i = startIndex; i < this->numberOfAccessory; i++) {
+            string s = this->getAccessory(i).getName();
+            if (s.find(str) >= 0 && s.find(str) <= s.length())
+                return i;
+        }
+
+    return -1;
+}
+
 void CommodityManager::update(Guitar guitar, Guitar newGuitar) {
     int index = indexOf(guitar);
 
@@ -413,6 +431,53 @@ bool CommodityManager::hasAccessory() {
     if (this->numberOfAccessory > 0)
         return true;
     return false;
+}
+
+const CommodityManager& CommodityManager::findAllCommodity(string str, string option, string commodity) {
+    CommodityManager *commodityManager = new CommodityManager();
+    if (commodity == "Guitar") {
+        int i = 0;
+        int index = this->indexOf(str, option, commodity, i);
+        while (index != -1) {
+            commodityManager->push(this->getGuitar(index));
+            i = index + 1;
+            index = this->indexOf(str, option, commodity);
+        }
+    }
+    if (commodity == "Accessory") {
+        int i = 0;
+        int index = this->indexOf(str, option, commodity, i);
+        while (index != 1) {
+            commodityManager->push(this->getAccessory(index));
+            i = index + 1;
+            index = this->indexOf(str, option, commodity, i);
+        }
+    }
+    return *commodityManager;
+}
+
+const CommodityManager& CommodityManager::findAllName(string str, string option) {
+    CommodityManager *commodityManager = new CommodityManager();
+    if (option == "Guitar") {
+        int i = 0;
+        int index = this->indexOfName(str, option, i);
+        while (index != -1) {
+            commodityManager->push(this->getGuitar(index));
+            i = index + 1;
+            index = this->indexOfName(str, option, i);
+        }
+    }
+    if (option == "Accessory") {
+        int i = 0;
+        int index = this->indexOfName(str, option, i);
+        while (index != -1) {
+            commodityManager->push(this->getAccessory(index));
+            i = index + 1;
+            index = this->indexOfName(str, option, i);
+        }
+    }
+
+    return *commodityManager;
 }
 
 const CommodityManager& CommodityManager::operator=(const CommodityManager& commodity) {

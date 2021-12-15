@@ -1,19 +1,19 @@
 Ma hoa don: 1023123
 Ten khach hang: Hieu
 Hang hoa: 
-	 -- Guitar --   -- 1 -- 3000000
+	1022004 -- Guitar -- Yamaha FT-300 -- 1 -- 4000000
 	100223 -- Accessory -- Capo Elise -- 1 -- 100000
 	100224 -- Accessory -- Pick Elise -- 2 -- 40000
-Tong tien: 3140000
+Tong tien: 4140000
 Ngay xuat hoa don: 10/12/2021
 
 Ma hoa don: 1022013
 Ten khach hang: Nam
 Hang hoa: 
-	 -- Guitar --   -- 1 -- 3000000
 	1022004 -- Guitar -- Yamaha FT-300 -- 1 -- 4000000
+	1022291 -- Guitar -- Martin&Co D-200 -- 1 -- 12590000
 	100223 -- Accessory -- Capo Elise -- 1 -- 100000
 	100224 -- Accessory -- Pick Elise -- 2 -- 40000
-Tong tien: 7140000
+Tong tien: 16730000
 Ngay xuat hoa don: 10/12/2020
 

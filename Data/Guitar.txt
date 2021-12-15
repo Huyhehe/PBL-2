@@ -5,8 +5,6 @@ So luong: 4
 Gia: 3000000
 Thoi gian bao hanh: 1 nam
 
-
-
 Ma: 1022004
 Thuong hieu: Yamaha
 Ten: FT-300

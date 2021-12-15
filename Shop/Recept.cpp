@@ -43,6 +43,10 @@ CommodityManager Receipt::getCommodity() const {
     return this->commodity;
 }
 
+CommodityManager& Receipt::getCommodityManager() {
+    return this->commodity;
+}
+
 void Receipt::addCommodity(const Guitar& guitar, int quantity) {
     (this->commodity).pushWithQuantity(guitar, quantity);
 }

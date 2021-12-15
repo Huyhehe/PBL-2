@@ -23,7 +23,7 @@ La nhan vien toan thoi gian: false
 Tien luong: 3000000
 
 ID : 102230123
-Ten nhan vien: Nguyen Kim
+Ten nhan vien: Ho Anh Kim
 Ngay sinh: 2/5/1999
 Gioi tinh: nam
 So dien thoai: 0905128819
