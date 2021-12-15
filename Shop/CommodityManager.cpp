@@ -229,6 +229,220 @@ void CommodityManager::update(Accessory accessory, Accessory newAccessory) {
     *(this->accessory + index) = newAccessory;
 }
 
+void CommodityManager::updateGuitar(string str, string option) {
+    CommodityManager commodityManager;
+    if (option != "Full Name")
+        commodityManager = this->findAllCommodity(str, option, "Guitar");
+    else
+        commodityManager = this->findAllName(str, "Guitar");
+    if (commodityManager.getNumberOfGuitar() == 0) {
+        cout << "Khong co du lieu trung khop, vui long kiem lai thong tin ban muon chinh sua.";
+        return;
+    }
+    cout << commodityManager;
+    cout << "Ban muon sua doi nhan vien co so thu thu (chon 0 de sua tat ca): ";
+    int index;
+    cin >> index;
+    while (index < 0 || index > commodityManager.getNumberOfGuitar()) {
+        cout << "Lua chon khong phu hop, vui long chon lai: ";
+        cin >> index;
+    }
+    system("cls");
+    cout << "Ban muon chinh sua." << endl;
+    cout << "1. Chinh sua ma Guitar." << endl;
+    cout << "2. Chinh sua thuong hieu." << endl;
+    cout << "3. Chinh sua ten Guitar." << endl;
+    cout << "4. Chinh sua so luong dan co trong kho." << endl;
+    cout << "5. Chinh sua gia Guitar." << endl;
+    cout << "6. Chinh sua thoi gian bao hanh." << endl;
+    cout << "Hay nhap lua chon cua ban: ";
+    int j = 0;
+    cin >> j;
+    while (j < 1 || j > 6) {
+        cout << "Lua chon khong hop le, vui long nhap lai lua chon cua ban: ";
+        cin >> j;
+    }
+    string s;
+    int i = index - 1;
+    bool deleteAll = false;
+    if (index == 0) {
+        deleteAll = true;
+        i = 0;
+    }
+    getline(cin, s);
+    while (i < commodityManager.getNumberOfGuitar()) {
+        switch(j) {
+            case 1: {
+                cout << "Nhap ma Guitar moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Guitar temp = commodityManager.getGuitar(i);
+                temp.setID(s);
+                this->update(commodityManager.getGuitar(i), temp);
+                break;
+            }
+            case 2: {
+                cout << "Nhap ten thuong hieu Guitar moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Guitar temp = commodityManager.getGuitar(i);
+                temp.setBrand(s);
+                this->update(commodityManager.getGuitar(i), temp);
+                break;
+            }
+            case 3: {
+                cout << "Nhap ten Guitar moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Guitar temp = commodityManager.getGuitar(i);
+                temp.setName(s);
+                this->update(commodityManager.getGuitar(i), temp);
+                break;
+            }
+            case 4: {
+                cout << "Nhap so luong guitar co trong kho moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Guitar temp = commodityManager.getGuitar(i);
+                temp.setQuantity(stoi(s));
+                this->update(commodityManager.getGuitar(i), temp);
+                break;
+            }
+            case 5: {
+                cout << "Nhap gia Guitar moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Guitar temp = commodityManager.getGuitar(i);
+                temp.setPrice(stoi(s));
+                this->update(commodityManager.getGuitar(i), temp);
+                break;
+            }
+            case 6: {
+                cout << "Nhap thoi gian bao hanh moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Guitar temp = commodityManager.getGuitar(i);
+                temp.setWarrantyTime(s);
+                this->update(commodityManager.getGuitar(i), temp);
+                break;
+            }
+            default:
+                break;
+        }
+        if (deleteAll)
+            i++;
+        else
+            break;
+    }
+}
+
+void CommodityManager::updateAccessory(string str, string option) {
+    CommodityManager commodityManager;
+    if (option != "Full Name")
+        commodityManager = this->findAllCommodity(str, option, "Accessory");
+    else
+        commodityManager = this->findAllName(str, "Accessory");
+    if (commodityManager.getNumberOfAccessory() == 0) {
+        cout << "Khong co du lieu trung khop, vui long kiem lai thong tin ban muon chinh sua.";
+        return;
+    }
+    cout << commodityManager;
+    cout << "Ban muon sua doi nhan vien co so thu thu (chon 0 de sua tat ca): ";
+    int index;
+    cin >> index;
+    while (index < 0 || index > commodityManager.getNumberOfAccessory()) {
+        cout << "Lua chon khong phu hop, vui long chon lai: ";
+        cin >> index;
+    }
+    system("cls");
+    cout << "Ban muon chinh sua." << endl;
+    cout << "1. Chinh sua ma phu kien." << endl;
+    cout << "2. Chinh sua loai phu kien." << endl;
+    cout << "3. Chinh sua ten phu kien." << endl;
+    cout << "4. Chinh sua so luong phu kien co trong kho." << endl;
+    cout << "5. Chinh sua gia phu kien." << endl;
+    cout << "6. Chinh sua thoi gian bao hanh." << endl;
+    cout << "Hay nhap lua chon cua ban: ";
+    int j = 0;
+    cin >> j;
+    while (j < 1 || j > 6) {
+        cout << "Lua chon khong hop le, vui long nhap lai lua chon cua ban: ";
+        cin >> j;
+    }
+    string s;
+    int i = index - 1;
+    bool deleteAll = false;
+    if (index == 0) {
+        deleteAll = true;
+        i = 0;
+    }
+    getline(cin, s);
+    while (i < commodityManager.getNumberOfAccessory()) {
+        switch(j) {
+            case 1: {
+                cout << "Nhap ma phu kien moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Accessory temp = commodityManager.getAccessory(i);
+                temp.setID(s);
+                this->update(commodityManager.getAccessory(i), temp);
+                break;
+            }
+            case 2: {
+                cout << "Nhap ten loai phu kien moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Accessory temp = commodityManager.getAccessory(i);
+                temp.setTypeOfCommodoty(s);
+                this->update(commodityManager.getAccessory(i), temp);
+                break;
+            }
+            case 3: {
+                cout << "Nhap ten phu kien moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Accessory temp = commodityManager.getAccessory(i);
+                temp.setName(s);
+                this->update(commodityManager.getAccessory(i), temp);
+                break;
+            }
+            case 4: {
+                cout << "Nhap so luong phu kien co trong kho moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Accessory temp = commodityManager.getAccessory(i);
+                temp.setQuantity(stoi(s));
+                this->update(commodityManager.getAccessory(i), temp);
+                break;
+            }
+            case 5: {
+                cout << "Nhap gia moi cho phu kien: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Accessory temp = commodityManager.getAccessory(i);
+                temp.setPrice(stoi(s));
+                this->update(commodityManager.getAccessory(i), temp);
+                break;
+            }
+            case 6: {
+                cout << "Nhap thoi gian bao hanh moi: ";
+                //getline(cin, s);
+                getline(cin, s);
+                Accessory temp = commodityManager.getAccessory(i);
+                temp.setWarrantyTime(s);
+                this->update(commodityManager.getAccessory(i), temp);
+                break;
+            }
+            default:
+                break;
+        }
+        if (deleteAll)
+            i++;
+        else
+            break;
+    }
+}
+
 void CommodityManager::deleteAt(int index, string commodity) {
     if (commodity == "Guitar") {
         if (index < 0 || index >= this->numberOfGuitar)
@@ -315,6 +529,56 @@ void CommodityManager::deleteAccessory(Accessory accessory) {
     }
 
     this->numberOfAccessory--;
+}
+
+void CommodityManager::deleteGuitar(string str, string option) {
+    CommodityManager commodityManager;
+    if (option != "Full Name")
+        commodityManager = this->findAllCommodity(str, option, "Guitar");
+    else
+        commodityManager = this->findAllName(str, "Guitar");
+    cout << commodityManager;
+    cout << "Ban muon xoa guitar co so thu tu(chon 0 de xoa tat ca): ";
+    int i;
+    cin >> i;
+    while (i < 0 || i > commodityManager.getNumberOfGuitar()) {
+        cout << "Lua chon sai, vui long nhap lai: ";
+        cin >> i;
+    }
+    if (i == 0) {
+        for (int j = 0; j < commodityManager.getNumberOfGuitar(); j++)
+            this->deleteGuitar(commodityManager.getGuitar(j));
+        return;
+    }
+    int index = this->indexOf(commodityManager.getGuitar(i - 1));
+    if (index == -1)
+        return;
+    deleteAt(index, "Guitar");
+}
+
+void CommodityManager::deleteAccessory(string str, string option) {
+    CommodityManager commodityManager;
+    if (option != "Full Name")
+        commodityManager = this->findAllCommodity(str, option, "Accessory");
+    else
+        commodityManager = this->findAllName(str, "Accessory");
+    cout << commodityManager;
+    cout << "Ban muon xoa phu kien co so thu tu(chon 0 de xoa tat ca): ";
+    int i;
+    cin >> i;
+    while (i < 0 || i > commodityManager.getNumberOfAccessory()) {
+        cout << "Lua chon sai, vui long nhap lai: ";
+        cin >> i;
+    }
+    if (i == 0) {
+        for (int j = 0; j < commodityManager.getNumberOfAccessory(); j++)
+            this->deleteAccessory(commodityManager.getAccessory(j));
+        return;
+    }
+    int index = this->indexOf(commodityManager.getAccessory(i - 1));
+    if (index == -1)
+        return;
+    deleteAt(index, "Accessory");
 }
 
 void CommodityManager::swap(Guitar& g1, Guitar& g2) {
@@ -441,7 +705,7 @@ const CommodityManager& CommodityManager::findAllCommodity(string str, string op
         while (index != -1) {
             commodityManager->push(this->getGuitar(index));
             i = index + 1;
-            index = this->indexOf(str, option, commodity);
+            index = this->indexOf(str, option, commodity, i);
         }
     }
     if (commodity == "Accessory") {
@@ -492,6 +756,69 @@ const CommodityManager& CommodityManager::operator=(const CommodityManager& comm
         this->push(*(commodity.accessory + i));
 
     return *this;
+}
+
+void CommodityManager::addGuitar() {
+    Guitar guitar;
+    string str;
+    getline(cin, str);
+    cout << "Nhap ma guitar: ";
+    getline(cin, str);
+    if (str != "")
+        guitar.setID(str);
+    cout << "Nhap thuong hieu guitar: ";
+    getline(cin, str);
+    if (str != "")
+        guitar.setBrand(str);
+    cout << "Nhap ten guitar: ";
+    getline(cin, str);
+    if (str != "")
+        guitar.setName(str);
+    cout << "Nhap so luong guitar: ";
+    getline(cin, str);
+    if (str != "")
+        guitar.setQuantity(stoi(str));
+    cout << "Nhap gia cua guitar: ";
+    getline(cin, str);
+    if (str != "")
+        guitar.setPrice(stoi(str));
+    cout << "Nhap thoi gian bao hanh: ";
+    getline(cin, str);
+    if (str != "")
+        guitar.setWarrantyTime(str);
+    this->push(guitar);
+}
+
+void CommodityManager::addAccessory() {
+    Accessory accessory;
+    string str;
+    getline(cin, str);
+    cout << "Nhap ma phu kien: ";
+    getline(cin, str);
+    if (str != "")
+        accessory.setID(str);
+    cout << "Nhap loai phu kien: ";
+    getline(cin, str);
+    if (str != "")
+        accessory.setTypeOfCommodoty(str);
+    cout << "Nhap ten phu kien: ";
+    getline(cin, str);
+    if (str != "")
+        accessory.setName(str);
+    cout << "Nhap so luong phu kien: ";
+    getline(cin, str);
+    if (str != "")
+        accessory.setQuantity(stoi(str));
+    cout << "Nhap gia cua phu kien: ";
+    getline(cin, str);
+    if (str != "")
+        accessory.setPrice(stoi(str));
+    cout << "Nhap thoi gian bao hanh: ";
+    getline(cin, str);
+    if (str != "")
+        accessory.setWarrantyTime(str);
+    this->push(accessory);
+
 }
 
 ostream& operator<<(ostream& out, const CommodityManager& commodity){

@@ -382,8 +382,7 @@ void EmployeeManager::deleteEmployee(string str, string option) {
     } else
         emp = this->findAllLastName(str);
     cout << emp;
-    cout << emp.getNumberOfEmployee();
-    cout << "Ban muon xoa nhan vien co stt (chon 0 de xoa tat ca): ";
+    cout << "Ban muon xoa nhan vien co so thu tu(chon 0 de xoa tat ca): ";
     int i;
     cin >> i;
     while (i < 0 || i > emp.getNumberOfEmployee()) {
@@ -391,7 +390,7 @@ void EmployeeManager::deleteEmployee(string str, string option) {
         cin >> i;
     }
     if (i == 0) {
-        for (int j = 0; j < emp.getNumberOfEmployee();j++)
+        for (int j = 0; j < emp.getNumberOfEmployee(); j++)
             this->remove(emp[j]);
         return;
     }

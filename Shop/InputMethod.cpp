@@ -306,6 +306,10 @@ int main() {
     CommodityManager storage;
     readData(storage, "Guitar", "../Data/Guitar.txt");
     readData(storage, "Accessory", "../Data/Accessory.txt");
+    //storage.updateAccessory("Capo", "Full Name");
+    //cout << storage;
+    storage.addGuitar();
+    cout << storage;
 
     CommodityManager commodityManager;
     Guitar g1(storage.getGuitar(1));
@@ -328,7 +332,6 @@ int main() {
     writeData(manager, "../Data/Receipt.txt");
     EmployeeManager empManager;
     readData(empManager, "../Data/Employee.txt");
-    cout << storage.findAllName("Capo", "Accessory");
 
     //ReceiptManager rpt;
     //readData(rpt, storage, "../Data/Receipt.txt");

@@ -30,9 +30,13 @@ class CommodityManager {
         int indexOfName(string, string, int = 0);
         void update(Guitar, Guitar);
         void update(Accessory, Accessory);
+        void updateGuitar(string, string);
+        void updateAccessory(string, string);
         void deleteAt(int, string);
         void deleteGuitar(Guitar);
         void deleteAccessory(Accessory);
+        void deleteGuitar(string, string = "ID");
+        void deleteAccessory(string, string = "ID");
         void swap(Guitar&, Guitar&);
         void swap(Accessory&, Accessory&);
         void sort(string, string);
@@ -43,6 +47,8 @@ class CommodityManager {
         const CommodityManager& findAllCommodity(string, string, string);
         const CommodityManager& findAllName(string, string);
         const CommodityManager& operator=(const CommodityManager&);
+        void addGuitar();
+        void addAccessory();
         friend ostream& operator<<(ostream&, const CommodityManager&);
         friend class ReceiptManager;
         friend class Receipt;

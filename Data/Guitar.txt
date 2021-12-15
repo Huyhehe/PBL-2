@@ -7,7 +7,7 @@ Thoi gian bao hanh: 1 nam
 
 Ma: 1022004
 Thuong hieu: Yamaha
-Ten: FT-300
+Ten: DR-100
 So luong: 6
 Gia: 4000000
 Thoi gian bao hanh: 1 nam
