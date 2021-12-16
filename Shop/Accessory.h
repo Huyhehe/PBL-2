@@ -15,6 +15,7 @@ class Accessory : public Commodity {
         ~Accessory();
         void setWarrantyTime(string);
         string getWarrantyTime() const;
+        string getFullName() const;
         string getTypeOfCommodity() const;
         void setTypeOfCommodoty(string);
         friend ostream& operator<<(ostream&, const Accessory&);

@@ -4,7 +4,7 @@ Commodity::Commodity() {
 
 }
 
-Commodity::Commodity(string ID, string name, int quantity, int price) 
+Commodity::Commodity(string ID, string name, int quantity, int price)
     : ID(ID), name(name), quantity(quantity), price(price) {
 
 }
@@ -24,15 +24,15 @@ void Commodity::setQuantity(int quantity) {
 void Commodity::setPrice(int price) {
     this->price = price;
 }
-string Commodity::getID() {
+string Commodity::getID() const {
     return ID;
 }
-string Commodity::getName() {
+string Commodity::getName() const {
     return name;
 }
-int Commodity::getQuantity() {
+int Commodity::getQuantity() const {
     return quantity;
 }
-int Commodity::getPrice() {
+int Commodity::getPrice() const {
     return price;
 }

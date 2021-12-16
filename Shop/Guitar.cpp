@@ -32,6 +32,10 @@ string Guitar::getBrand() const {
     return brand;
 }
 
+string Guitar::getFullName() const {
+    return this->getBrand() + this->getName();
+}
+
 string Guitar::getWarrantyTime() const {
     return warrantyTime;
 }

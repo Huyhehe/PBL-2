@@ -4,7 +4,7 @@ Accessory::Accessory() {
 
 }
 
-Accessory::Accessory(string ID, string typeOfCommodity, string name, int quantity, int price, string warrantyTime) 
+Accessory::Accessory(string ID, string typeOfCommodity, string name, int quantity, int price, string warrantyTime)
     : Commodity(ID, name, quantity, price) {
     this->warrantyTime = warrantyTime;
     this->typeOfCommodity = typeOfCommodity;
@@ -20,7 +20,11 @@ Accessory::Accessory(const Accessory& accessory) {
 }
 
 Accessory::~Accessory(){
-    
+
+}
+
+string Accessory::getFullName() const {
+    return this->getTypeOfCommodity() + this->getName();
 }
 
 string Accessory::getWarrantyTime() const {

@@ -16,8 +16,8 @@ class Commodity {
         void setName(string);
         void setQuantity(int);
         void setPrice(int);
-        string getID();
-        string getName();
-        int getQuantity();
-        int getPrice();
+        string getID() const;
+        string getName() const;
+        int getQuantity() const;
+        int getPrice() const;
 };

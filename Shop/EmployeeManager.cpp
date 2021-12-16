@@ -1,4 +1,5 @@
 #include "EmployeeManager.h"
+#include <iomanip>
 
 EmployeeManager::EmployeeManager() {
     this->numberOfEmployee = 0;
@@ -76,6 +77,14 @@ int EmployeeManager::indexOf(string s, string option, int startIndex) {
                 return i;
     }
 
+    if (option == "Date Of Birth") {
+        Date date = stringToDate(s);
+        for (int i = startIndex; i < this->numberOfEmployee; i++) {
+            if ((this->emp + i)->getDateOfBirth() == date)
+                return i;
+        }
+    }
+
     if (option == "Phone") {
         for (int i = startIndex; i < this->numberOfEmployee; i++)
             if ((this->emp + i)->getPhoneNumber() == s)
@@ -105,6 +114,12 @@ int EmployeeManager::indexOf(string s, string option, int startIndex) {
         Date date = stringToDate(s);
         for (int i = startIndex; i < this->numberOfEmployee; i++)
             if ((this->emp + i)->getContract().Contract_getDateOut() == date)
+                return i;
+    }
+
+    if (option == "Salary") {
+        for (int i = startIndex; i < this->numberOfEmployee; i++)
+            if ((this->emp + i)->getSalary() == stoi(s))
                 return i;
     }
 
@@ -191,42 +206,75 @@ void EmployeeManager::updateData(string str, string option) {
         emp = this->findAllEmployee(str, option);
     } else
         emp = this->findAllLastName(str);
-    cout << emp;
-    cout << "Ban muon sua doi nhan vien co stt (chon 0 de cap nhat tat ca): ";
-    int index;
-    cin >> index;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl; //5, 10, 30, 11, 4, 11
+    cout << "| STT |    ID    |            Ho ten            | Ngay sinh | GT |    SDT    |" << endl;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
+    for (int i = 0 ; i < emp.getNumberOfEmployee(); i++) {
+        string temp;
+        if (i < 10)
+            temp = "00";
+        if (i >= 10 && i < 100)
+            temp = "0";
+        cout << "|" << temp << i + 1 << setw(3)
+             << "|" << emp[i].getID() << setw(11 - emp[i].getID().length())
+             << "|" << emp[i].getName() << setw(31 - emp[i].getName().length())
+             << "|" << emp[i].getDateOfBirth() << setw(12 - emp[i].getDateOfBirth().getDate().length())
+             << "|" << emp[i].getGender() << setw(5 - emp[i].getGender().length())
+             << "|" << emp[i].getPhoneNumber() << setw(12 - emp[i].getPhoneNumber().length()) << "|" << endl;
+    }
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
+    cout << "Ban muon sua doi nhan vien co so thu tu (chon (0) de chinh sua tat ca hoac (x) de thoat): ";
+    string temp;
+    getline(cin, temp);
+    if (temp == "x" || temp == "X") {
+        cout << "Chinh sua thong tin nhan vien khong thanh cong!" << endl;
+        cout << "Ban co muon tiep tuc khong (Y/N): ";
+        return;
+    }
+    while (temp < "0" || temp > "9") {
+        cout << "Lua chon khong hop le, vui long thu lai: ";
+        getline(cin, temp);
+    }
+    int index = stoi(temp);
     while (index < 0 || index > emp.getNumberOfEmployee()) {
         cout << "Lua chon khong phu hop, vui long chon lai: ";
         cin >> index;
+        cin.ignore();
     }
     system("cls");
-    cout << "Ban muon chinh sua: " << endl;
-    cout << "1. Chinh sua ID. " << endl;
-    cout << "2. Chinh sua Ten." << endl;
-    cout << "3. Chinh sua ngay sinh." << endl;
-    cout << "4. Chinh sua gioi tinh." << endl;
-    cout << "5. Chinh sua so dien thoai." << endl;
-    cout << "6. Chinh sua email." << endl;
-    cout << "7. Chinh sua dia chi." << endl;
-    cout << "8. Chinh sua ngay bat dau lam viec." << endl;
-    cout << "9. Chinh sua ngay ket thuc hop dong lam viec." << endl;
-    cout << "10. Chinh sua hinh thuc nhan vien((y): full time/(n): part time)." << endl;
-    cout << "11. Chinh sua luong." << endl;
+    cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
+         << "+                   GUITAR STORE                   +" << endl
+         << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
+         << "+         LUA CHON THONG TIN MUON CHINH SUA        +" << endl
+         << "+ 1. Ma nhan vien.                                 +" << endl
+         << "+ 2. Ho va ten Nhan Vien.                          +" << endl
+         << "+ 3. Ngay sinh.                                    +" << endl
+         << "+ 4. Gioi tinh.                                    +" << endl
+         << "+ 5. So dien thoai.                                +" << endl
+         << "+ 6. Email.                                        +" << endl
+         << "+ 7. Dia chi.                                      +" << endl
+         << "+ 8. Ngay bat dau lam viec.                        +" << endl
+         << "+ 9. Ngay het hop dong lam viec.                   +" << endl
+         << "+ 10. Tien luong.                                  +" << endl
+         << "+ 11. Ten nhan vien.                               +" << endl
+         << "+                                                  +" << endl
+         << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
     cout << "Hay nhap lua chon cua ban: ";
     int j = 0;
     cin >> j;
+    cin.ignore();
     while (j < 1 || j > 11) {
         cout << "Lua chon khong hop le, vui long nhap lai lua chon cua ban: ";
         cin >> j;
+        cin.ignore();
     }
     string s;
     int i = index - 1;
-    bool deleteAll = false;
+    bool updateAll = false;
     if (index == 0) {
-        deleteAll = true;
+        updateAll = true;
         i = 0;
     }
-    getline(cin, s);
     while (i < emp.getNumberOfEmployee()) {
         switch(j) {
             case 1: {
@@ -334,11 +382,13 @@ void EmployeeManager::updateData(string str, string option) {
             default:
                 break;
         }
-        if (deleteAll)
+        if (updateAll)
             i++;
         else
             break;
     }
+    cout << "Chinh sua thong tin nhan vien thanh cong!" << endl
+         << "Ban co muon tiep tuc khong (Y/N): ";
 }
 
 void EmployeeManager::updateSalary(long salary) {
@@ -368,7 +418,6 @@ void EmployeeManager::remove(int index) {
 }
 
 void EmployeeManager::remove(Employee emp) {
-    cout << "ok";
     int index = indexOf(emp);
     remove(index);
 }
@@ -381,23 +430,57 @@ void EmployeeManager::deleteEmployee(string str, string option) {
         emp = this->findAllEmployee(str, option);
     } else
         emp = this->findAllLastName(str);
-    cout << emp;
-    cout << "Ban muon xoa nhan vien co so thu tu(chon 0 de xoa tat ca): ";
-    int i;
-    cin >> i;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl; //5, 10, 30, 11, 4, 11
+    cout << "| STT |    ID    |            Ho ten            | Ngay sinh | GT |    SDT    |" << endl;
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
+    for (int i = 0 ; i < emp.getNumberOfEmployee(); i++) {
+        string temp;
+        if (i < 10)
+            temp = "00";
+        if (i >= 10 && i < 100)
+            temp = "0";
+        cout << "|" << temp << i + 1 << setw(3)
+             << "|" << emp[i].getID() << setw(11 - emp[i].getID().length())
+             << "|" << emp[i].getName() << setw(31 - emp[i].getName().length())
+             << "|" << emp[i].getDateOfBirth() << setw(12 - emp[i].getDateOfBirth().getDate().length())
+             << "|" << emp[i].getGender() << setw(5 - emp[i].getGender().length())
+             << "|" << emp[i].getPhoneNumber() << setw(12 - emp[i].getPhoneNumber().length()) << "|" << endl;
+    }
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
+    cout << "Ban muon xoa nhan vien co so thu tu(chon (0) de xoa tat ca hoac nhan (x) de thoat): ";
+    string temp;
+    getline(cin, temp);
+    if (temp == "x" || temp == "X") {
+        cout << "Xoa nhan vien khong thanh cong!" << endl
+             << "Ban co muon tiep tuc khong (Y/N): ";
+        return;
+    }
+    while (temp < "0" || temp > "9") {
+        cout << "Lua chon khong hop le, vui long thu lai: ";
+        getline(cin, temp);
+    }
+    int i = stoi(temp);
     while (i < 0 || i > emp.getNumberOfEmployee()) {
-        cout << "Lua chon sai, vui long nhap lai: ";
+        cout << "Lua chon khong hop le, vui long thu lai: ";
         cin >> i;
+        cin.ignore();
     }
     if (i == 0) {
         for (int j = 0; j < emp.getNumberOfEmployee(); j++)
             this->remove(emp[j]);
+        cout << "Xoa nhan vien khong thanh cong!" << endl
+             << "Ban co muon tiep tuc khong (Y/N): ";
         return;
     }
     int index = this->indexOf(emp[i - 1]);
-    if (index == -1)
+    if (index == -1) {
+        cout << "Xoa nhan vien khong thanh cong!" << endl
+             << "Ban co muon tiep tuc khong (Y/N): ";
         return;
+    }
     remove(index);
+    cout << "Xoa nhan vien khong thanh cong!" << endl
+         << "Ban co muon tiep tuc khong (Y/N): ";
 }
 
 void EmployeeManager::deleteAllLastName(string name) {
@@ -420,6 +503,8 @@ void EmployeeManager::deleteAllEmployee(string str, string option) {
         }
         i++;
     }
+    cout << "Xoa nhan vien thanh cong!" << endl
+         << "Ban co muon tiep tuc khong (Y/N): ";
 }
 
 void EmployeeManager::swap(Employee& emp1, Employee& emp2) {
@@ -497,7 +582,6 @@ ostream& operator<<(ostream& out, const EmployeeManager& e) {
 istream& operator>>(istream& in, EmployeeManager& empManager) {
     Employee emp;
     string str;
-    getline(in, str);
     cout << "Ma nhan vien: ";
     getline(in, str);
     if (str != "")
