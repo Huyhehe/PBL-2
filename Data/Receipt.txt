@@ -180,17 +180,3 @@ Hang hoa:
 Tong tien: 600000
 Ngay xuat hoa don: 10/12/2021
 
-Ma hoa don: 8123
-Ten khach hang: Hioa
-Hang hoa: 
-	+ Accessory
-	Ma phu kien: 100223
-	Loai phu kien: Capo
-	Ten phu kien: Capo Elise
-	So luong phu kien: 1
-	Gia: 100000
-	Thoi gian bao hanh: Khong bao hanh
-
-Tong tien: 100000
-Ngay xuat hoa don: 04/05/19921
-

@@ -46,6 +46,18 @@ Ngay het hop dong lam viec: 08/02/2022
 La nhan vien toan thoi gian: true
 Tien luong: 7000000
 
+Ma nhan vien: 10229910
+Ho ten nhan vien: Minh Hieu
+Ngay sinh: 08/12/2000
+Gioi tinh: Nam
+So dien thoai: 090599021
+Email: hieukk@gmail.com
+Dia chi: 34 Nguyen Hoang
+Ngay bat dau lam viec: 08/02/2021
+Ngay het hop dong lam viec: 09/12/2023
+La nhan vien toan thoi gian: true
+Tien luong: 7000000
+
 Ma nhan vien: 102230123
 Ho ten nhan vien: Ho Anh Kim
 Ngay sinh: 02/05/1999

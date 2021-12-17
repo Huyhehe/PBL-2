@@ -279,7 +279,7 @@ void receiptMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMan
             cout << "Nhap ma hoa don can xoa: ";
             getline(cin, str);
             receiptStored.remove(receiptStored[receiptStored.indexOf(str)]);
-            cout << "Xoa hoa don thanh cong!";
+            cout << "Xoa hoa don thanh cong!" << endl;
             cout << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
             cin >> continueOption;

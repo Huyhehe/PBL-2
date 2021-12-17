@@ -397,9 +397,9 @@ void CommodityManager::updateAccessory(string str, string option) {
         cout << "Ban co muon tiep tuc khong (Y/N):";
         return;
     }
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
-    cout << "| STT |    ID    |    Loai    |     Ten     | SL |  Gia tien  |    Bao hanh    |" << endl;
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
+    cout << "| STT |    ID    |    Loai    |        Ten        | SL |  Gia tien  |    Bao hanh    |" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
     for (int i = 0 ; i < commodityManager.getNumberOfAccessory(); i++) {
         string temp = "";
         if (i + 1 < 10)
@@ -409,7 +409,7 @@ void CommodityManager::updateAccessory(string str, string option) {
         cout << "|" << temp << i + 1<< setw(3)
              << "|" << commodityManager.getAccessory(i).getID() << setw(11 - commodityManager.getAccessory(i).getID().length())
              << "|" << commodityManager.getAccessory(i).getTypeOfCommodity() << setw(13 - commodityManager.getAccessory(i).getTypeOfCommodity().length())
-             << "|" << commodityManager.getAccessory(i).getName() << setw(14 - commodityManager.getAccessory(i).getName().length())
+             << "|" << commodityManager.getAccessory(i).getName() << setw(20 - commodityManager.getAccessory(i).getName().length())
              << "|" << commodityManager.getAccessory(i).getQuantity() << setw(5 - to_string(commodityManager.getAccessory(i).getQuantity()).length())
              << "|" << commodityManager.getAccessory(i).getPrice() << setw(13 - to_string(commodityManager.getAccessory(i).getPrice()).length())
              << "|" << commodityManager.getAccessory(i).getWarrantyTime() << setw(17 - commodityManager.getAccessory(i).getWarrantyTime().length()) << "|" << endl;
@@ -678,9 +678,9 @@ void CommodityManager::deleteAccessory(string str, string option) {
         cout << "Ban co muon tiep tuc khong (Y/N):";
         return;
     }
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
-    cout << "| STT |    ID    |    Loai    |     Ten     | SL |  Gia tien  |    Bao hanh    |" << endl;
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
+    cout << "| STT |    ID    |    Loai    |        Ten        | SL |  Gia tien  |    Bao hanh    |" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
     for (int i = 0 ; i < commodityManager.getNumberOfAccessory(); i++) {
         string temp = "";
         if (i < 10)
@@ -690,7 +690,7 @@ void CommodityManager::deleteAccessory(string str, string option) {
         cout << "|" << temp << i + 1<< setw(3)
              << "|" << commodityManager.getAccessory(i).getID() << setw(11 - commodityManager.getAccessory(i).getID().length())
              << "|" << commodityManager.getAccessory(i).getTypeOfCommodity() << setw(13 - commodityManager.getAccessory(i).getTypeOfCommodity().length())
-             << "|" << commodityManager.getAccessory(i).getName() << setw(14 - commodityManager.getAccessory(i).getName().length())
+             << "|" << commodityManager.getAccessory(i).getName() << setw(20 - commodityManager.getAccessory(i).getName().length())
              << "|" << commodityManager.getAccessory(i).getQuantity() << setw(5 - to_string(commodityManager.getAccessory(i).getQuantity()).length())
              << "|" << commodityManager.getAccessory(i).getPrice() << setw(13 - to_string(commodityManager.getAccessory(i).getPrice()).length())
              << "|" << commodityManager.getAccessory(i).getWarrantyTime() << setw(17 - commodityManager.getAccessory(i).getWarrantyTime().length()) << "|" << endl;
