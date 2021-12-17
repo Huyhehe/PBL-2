@@ -11,7 +11,7 @@
 using namespace std;
 
 string getData(const string& str) {
-    return str.substr(str.find(":") + 1, str.length());
+    return str.substr(str.find(":") + 1, str.length() - str.find(":") - 1);
 }
 
 string strip(const string& str) {
@@ -22,7 +22,15 @@ string strip(const string& str) {
         i += 1;
     }
     if (i >= 1)
-        return str.substr(i, str.length());
+        return str.substr(i, str.length() - i);
+    i = str.length() - 1;
+    while (i >= 0) {
+        if (str[i] != ' ')
+            break;
+        i--;
+    }
+    if (i >= 1)
+        return str.substr(0, i + 1);
     return str;
 }
 

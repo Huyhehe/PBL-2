@@ -663,11 +663,13 @@ const EmployeeManager& EmployeeManager::findAllEmployee(string str, string optio
 
 string EmployeeManager::getLastName(int index) {
     string str = (this->emp + index)->getName();
+    if (str.find(" ") < 0 || str.find(" ") > str.length())
+        return str;
     int i = str.length();
     while (str[i] != ' ') {
         i--;
     }
-    str = str.substr(i + 1, str.length() - i);
+    str = str.substr(i + 1, str.length() - i - 1);
     return str;
 }
 

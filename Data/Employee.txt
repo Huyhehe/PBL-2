@@ -1,15 +1,3 @@
-Ma nhan vien: 102230918
-Ho ten nhan vien: Bui Ngoc Truc
-Ngay sinh: 02/05/1998
-Gioi tinh: Nu
-So dien thoai: 0905199012
-Email: ngoctruc.b98@gmail.com
-Dia chi: 199 Hoang Dieu, Hai Chau, Da Nang
-Ngay bat dau lam viec: 09/03/2017
-Ngay het hop dong lam viec: 08/04/2014
-La nhan vien toan thoi gian: true
-Tien luong: 10000000
-
 Ma nhan vien: 102230882
 Ho ten nhan vien: Dao Mai Anh
 Ngay sinh: 02/05/2000
@@ -21,18 +9,6 @@ Ngay bat dau lam viec: 09/03/2020
 Ngay het hop dong lam viec: 08/04/2022
 La nhan vien toan thoi gian: false
 Tien luong: 3000000
-
-Ma nhan vien: 102230123
-Ho ten nhan vien: Ho Anh Kim
-Ngay sinh: 02/05/1999
-Gioi tinh: nam
-So dien thoai: 0905128819
-Email: hienvan.99@gmail.com
-Dia chi: 24 Hoang Thi Loan, Lien Chieu, Da Nang
-Ngay bat dau lam viec: 09/03/2019
-Ngay het hop dong lam viec: 08/04/2023
-La nhan vien toan thoi gian: true
-Tien luong: 5000000
 
 Ma nhan vien: 123
 Ho ten nhan vien: Hoang Anh
@@ -46,17 +22,53 @@ Ngay het hop dong lam viec: 07/11/2022
 La nhan vien toan thoi gian: false
 Tien luong: 8000000
 
-Ma nhan vien: 181293123
-Ho ten nhan vien: Hoang Long
-Ngay sinh: 08/11/2001
+Ma nhan vien: 11823
+Ho ten nhan vien: Minh Hieu
+Ngay sinh: 08/11/2021
 Gioi tinh: Nam
-So dien thoai: 08997111
-Email: Long@ggmai.com
-Dia chi: 67 Hoang Hoa Tham
-Ngay bat dau lam viec: 08/09/2021
-Ngay het hop dong lam viec: 07/11/2023
+So dien thoai: 091021
+Email: midnh@gma
+Dia chi: 45 Hai Nam
+Ngay bat dau lam viec: 08/02/2021
+Ngay het hop dong lam viec: 08/12/2024
 La nhan vien toan thoi gian: true
-Tien luong: 10000000
+Tien luong: 788888
+
+Ma nhan vien: 102912
+Ho ten nhan vien: Hieu
+Ngay sinh: 01/02/2001
+Gioi tinh: Nam
+So dien thoai: 91283
+Email: mindsahh@gmail.com
+Dia chi: 34 Hoang The Hien
+Ngay bat dau lam viec: 05/02/2021
+Ngay het hop dong lam viec: 08/02/2022
+La nhan vien toan thoi gian: true
+Tien luong: 7000000
+
+Ma nhan vien: 102230123
+Ho ten nhan vien: Ho Anh Kim
+Ngay sinh: 02/05/1999
+Gioi tinh: nam
+So dien thoai: 0905128819
+Email: hienvan.99@gmail.com
+Dia chi: 24 Hoang Thi Loan, Lien Chieu, Da Nang
+Ngay bat dau lam viec: 09/03/2019
+Ngay het hop dong lam viec: 08/04/2023
+La nhan vien toan thoi gian: true
+Tien luong: 5000000
+
+Ma nhan vien: 102230113
+Ho ten nhan vien: Nguyen Kim
+Ngay sinh: 10/01/1999
+Gioi tinh: Nu
+So dien thoai: 0905111203
+Email: nguyenkim.kt@gmail.com
+Dia chi: 13 Hoang Hoa Tham, Thanh Khe, Da Nang
+Ngay bat dau lam viec: 12/04/2019
+Ngay het hop dong lam viec: 12/04/2023
+La nhan vien toan thoi gian: true
+Tien luong: 5000000
 
 Ma nhan vien: 102230114
 Ho ten nhan vien: Hoang Thai Linh
@@ -70,15 +82,27 @@ Ngay het hop dong lam viec: 08/04/2022
 La nhan vien toan thoi gian: false
 Tien luong: 3000000
 
-Ma nhan vien: 102230113
-Ho ten nhan vien: Nguyen Kim
-Ngay sinh: 10/01/1999
-Gioi tinh: Nu
-So dien thoai: 0905111203
-Email: nguyenkim.kt@gmail.com
-Dia chi: 13 Hoang Hoa Tham, Thanh Khe, Da Nang
-Ngay bat dau lam viec: 12/04/2019
-Ngay het hop dong lam viec: 12/04/2023
+Ma nhan vien: 181293123
+Ho ten nhan vien: Hoang Long
+Ngay sinh: 08/11/2001
+Gioi tinh: Nam
+So dien thoai: 08997111
+Email: Long@ggmai.com
+Dia chi: 67 Hoang Hoa Tham
+Ngay bat dau lam viec: 08/09/2021
+Ngay het hop dong lam viec: 07/11/2023
 La nhan vien toan thoi gian: true
-Tien luong: 5000000
+Tien luong: 10000000
+
+Ma nhan vien: 102230918
+Ho ten nhan vien: Truc
+Ngay sinh: 02/05/1998
+Gioi tinh: Nu
+So dien thoai: 0905199012
+Email: ngoctruc.b98@gmail.com
+Dia chi: 199 Hoang Dieu, Hai Chau, Da Nang
+Ngay bat dau lam viec: 09/03/2017
+Ngay het hop dong lam viec: 08/04/2014
+La nhan vien toan thoi gian: true
+Tien luong: 10000000
 

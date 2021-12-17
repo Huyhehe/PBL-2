@@ -1,33 +1,3 @@
-Ma hoa don: 1023123
-Ten khach hang: Hieu
-Hang hoa: 
-	+ Guitar
-	Ma guitar: 1022004
-	Ten thuong hieu: Yamaha
-	Ten guitar: DR-100
-	So luong guitar: 1
-	Gia: 4000000
-	Thoi gian bao hanh: 1 nam
-
-	+ Accessory
-	Ma phu kien: 100223
-	Loai phu kien: Capo
-	Ten phu kien: Capo Elise
-	So luong phu kien: 1
-	Gia: 100000
-	Thoi gian bao hanh: Khong bao hanh
-
-	+ Accessory
-	Ma phu kien: 100224
-	Loai phu kien: pick
-	Ten phu kien: Pick Elise
-	So luong phu kien: 2
-	Gia: 20000
-	Thoi gian bao hanh: Khong bao hanh
-
-Tong tien: 4140000
-Ngay xuat hoa don: 10/12/2021
-
 Ma hoa don: 1022013
 Ten khach hang: Nam
 Hang hoa: 
@@ -66,34 +36,6 @@ Hang hoa:
 Tong tien: 16730000
 Ngay xuat hoa don: 10/12/2020
 
-Ma hoa don: 2138123
-Ten khach hang: Minh Hieu
-Hang hoa: 
-	+ Accessory
-	Ma phu kien: 100226
-	Loai phu kien: Capo
-	Ten phu kien: Capo Shark
-	So luong phu kien: 5
-	Gia: 120000
-	Thoi gian bao hanh: Khong bao hanh
-
-Tong tien: 600000
-Ngay xuat hoa don: 10/12/2021
-
-Ma hoa don: 1891230
-Ten khach hang: Hung
-Hang hoa: 
-	+ Accessory
-	Ma phu kien: 100223
-	Loai phu kien: Capo
-	Ten phu kien: Capo Elise
-	So luong phu kien: 1
-	Gia: 100000
-	Thoi gian bao hanh: Khong bao hanh
-
-Tong tien: 100000
-Ngay xuat hoa don: 07/11/2021
-
 Ma hoa don: 17231
 Ten khach hang: Hoang Anh
 Hang hoa: 
@@ -107,20 +49,6 @@ Hang hoa:
 
 Tong tien: 200000
 Ngay xuat hoa don: 02/01/2021
-
-Ma hoa don: 8123
-Ten khach hang: Hioa
-Hang hoa: 
-	+ Accessory
-	Ma phu kien: 100223
-	Loai phu kien: Capo
-	Ten phu kien: Capo Elise
-	So luong phu kien: 1
-	Gia: 100000
-	Thoi gian bao hanh: Khong bao hanh
-
-Tong tien: 100000
-Ngay xuat hoa don: 04/05/19921
 
 Ma hoa don: 123123
 Ten khach hang: Hinh
@@ -145,18 +73,32 @@ Tong tien: 3100000
 Ngay xuat hoa don: 03/02/2021
 
 Ma hoa don: 123
-Ten khach hang: hoa
+Ten khach hang: Nam
 Hang hoa: 
-	+ Guitar
-	Ma guitar: 1022004
-	Ten thuong hieu: Yamaha
-	Ten guitar: DR-100
-	So luong guitar: 1
-	Gia: 4000000
-	Thoi gian bao hanh: 1 nam
+	+ Accessory
+	Ma phu kien: 100223
+	Loai phu kien: Capo
+	Ten phu kien: Capo Elise
+	So luong phu kien: 2
+	Gia: 100000
+	Thoi gian bao hanh: Khong bao hanh
 
-Tong tien: 4000000
-Ngay xuat hoa don: 06/12/2021
+Tong tien: 200000
+Ngay xuat hoa don: 07/02/2021
+
+Ma hoa don: 1891230
+Ten khach hang: Hung
+Hang hoa: 
+	+ Accessory
+	Ma phu kien: 100223
+	Loai phu kien: Capo
+	Ten phu kien: Capo Elise
+	So luong phu kien: 1
+	Gia: 100000
+	Thoi gian bao hanh: Khong bao hanh
+
+Tong tien: 100000
+Ngay xuat hoa don: 07/11/2021
 
 Ma hoa don: 71312312
 Ten khach hang: Hoang Nhan
@@ -181,16 +123,74 @@ Tong tien: 3040000
 Ngay xuat hoa don: 04/12/2021
 
 Ma hoa don: 123
-Ten khach hang: Nam
+Ten khach hang: hoa
+Hang hoa: 
+	+ Guitar
+	Ma guitar: 1022004
+	Ten thuong hieu: Yamaha
+	Ten guitar: DR-100
+	So luong guitar: 1
+	Gia: 4000000
+	Thoi gian bao hanh: 1 nam
+
+Tong tien: 4000000
+Ngay xuat hoa don: 06/12/2021
+
+Ma hoa don: 1023123
+Ten khach hang: Hieu
+Hang hoa: 
+	+ Guitar
+	Ma guitar: 1022004
+	Ten thuong hieu: Yamaha
+	Ten guitar: DR-100
+	So luong guitar: 1
+	Gia: 4000000
+	Thoi gian bao hanh: 1 nam
+
+	+ Accessory
+	Ma phu kien: 100223
+	Loai phu kien: Capo
+	Ten phu kien: Capo Elise
+	So luong phu kien: 1
+	Gia: 100000
+	Thoi gian bao hanh: Khong bao hanh
+
+	+ Accessory
+	Ma phu kien: 100224
+	Loai phu kien: pick
+	Ten phu kien: Pick Elise
+	So luong phu kien: 2
+	Gia: 20000
+	Thoi gian bao hanh: Khong bao hanh
+
+Tong tien: 4140000
+Ngay xuat hoa don: 10/12/2021
+
+Ma hoa don: 2138123
+Ten khach hang: Minh Hieu
+Hang hoa: 
+	+ Accessory
+	Ma phu kien: 100226
+	Loai phu kien: Capo
+	Ten phu kien: Capo Shark
+	So luong phu kien: 5
+	Gia: 120000
+	Thoi gian bao hanh: Khong bao hanh
+
+Tong tien: 600000
+Ngay xuat hoa don: 10/12/2021
+
+Ma hoa don: 8123
+Ten khach hang: Hioa
 Hang hoa: 
 	+ Accessory
 	Ma phu kien: 100223
 	Loai phu kien: Capo
 	Ten phu kien: Capo Elise
-	So luong phu kien: 2
+	So luong phu kien: 1
 	Gia: 100000
 	Thoi gian bao hanh: Khong bao hanh
 
-Tong tien: 200000
-Ngay xuat hoa don: 07/02/2021
+Tong tien: 100000
+Ngay xuat hoa don: 04/05/19921
 

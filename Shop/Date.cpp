@@ -121,9 +121,15 @@ ostream& operator<<(ostream& out, const Date& date) {
 }
 
 Date stringToDate(string str) {
-    string day = str.substr(0, str.find("/"));
-    str = str.substr(str.find("/") + 1, str.length());
+    string day = str.substr(0, str.find("/") - 0);
+    if (day < "0" || day > "9")
+        day = "0";
+    str = str.substr(str.find("/") + 1, str.length() - str.find("/") - 1);
     string month = str.substr(0, str.find("/"));
-    string year = str.substr(str.find("/") + 1, str.length());
+    if (month < "0" || day > "9")
+        month = "0";
+    string year = str.substr(str.find("/") + 1, str.length() - str.find("/") - 1);
+    if (year < "0" || year > "9")
+        year = "0";
     return Date(stoi(day), stoi (month), stoi(year));
 }

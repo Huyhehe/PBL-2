@@ -5,11 +5,18 @@ So luong:10
 Gia: 100000
 Thoi gian bao hanh: Khong bao hanh
 
-Ma phu kien: 100224
-Loai phu kien: pick
-Ten phu kien: Pick Elise
-So luong:23
-Gia: 20000
+Ma phu kien: 191023
+Loai phu kien: Day dan
+Ten phu kien: Day dan Elixir
+So luong:10
+Gia: 250000
+Thoi gian bao hanh: Khong
+
+Ma phu kien: 100227
+Loai phu kien: Pick
+Ten phu kien: Pick Fender
+So luong:10
+Gia: 10000
 Thoi gian bao hanh: Khong bao hanh
 
 Ma phu kien: 100225
@@ -19,17 +26,10 @@ So luong:10
 Gia: 10000
 Thoi gian bao hanh: Khong bao hanh
 
-Ma phu kien: 100227
-Loai phu kien: Pick
-Ten phu kien: Pick Fender
-So luong:10
-Gia: 10000
+Ma phu kien: 100224
+Loai phu kien: pick
+Ten phu kien: Pick Elise
+So luong:23
+Gia: 20000
 Thoi gian bao hanh: Khong bao hanh
-
-Ma phu kien: 191023
-Loai phu kien: Day dan
-Ten phu kien: Day dan Elixir
-So luong:10
-Gia: 250000
-Thoi gian bao hanh: Khong
 
