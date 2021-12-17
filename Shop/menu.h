@@ -789,7 +789,7 @@ void guitarMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMana
          << "+ 2. Tim kiem                                      +" << endl
          << "+ 3. Them vao kho                                  +" << endl
          << "+ 4. Xoa khoi kho                                  +" << endl
-         << "+ 5. chinh sua thong tin guitar                    +" << endl
+         << "+ 5. Chinh sua thong tin guitar                    +" << endl
          << "+ 6. Quay lai                                      +" << endl
          << "+ 7. Thoat                                         +" << endl
          << "+                                                  +" << endl
@@ -1071,7 +1071,7 @@ void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptM
          << "+ 2. Tim kiem                                      +" << endl
          << "+ 3. Them vao kho                                  +" << endl
          << "+ 4. Xoa khoi kho                                  +" << endl
-         << "+ 5. Chinh sua thong                               +" << endl
+         << "+ 5. Chinh sua thong tin phu kien                  +" << endl
          << "+ 6. Quay lai                                      +" << endl
          << "+ 7. Thoat                                         +" << endl
          << "+                                                  +" << endl
