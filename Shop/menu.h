@@ -1389,21 +1389,21 @@ void guitarBoard(CommodityManager& storage, string fileName) {
 void accessoryBoard(CommodityManager& storage, string fileName) {
     ifstream fileInput;
     fileInput.open(fileName, ios::in);
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
-    cout << "| STT |    ID    |    Loai    |     Ten     | SL |  Gia tien  |    Bao hanh    |" << endl;
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
+    cout << "| STT |    ID    |    Loai    |        Ten        | SL |  Gia tien  |    Bao hanh    |" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
     //readData(storage, "Accessory", fileName);
     storage.sort("Accessory", "Full Name");
     for (int i = 0 ; i < storage.getNumberOfAccessory(); i++) {
         cout << "|" << toString(i + 1) << i + 1<< setw(3)
              << "|" << storage.getAccessory(i).getID() << setw(11 - storage.getAccessory(i).getID().length())
              << "|" << storage.getAccessory(i).getTypeOfCommodity() << setw(13 - storage.getAccessory(i).getTypeOfCommodity().length())
-             << "|" << storage.getAccessory(i).getName() << setw(14 - storage.getAccessory(i).getName().length())
+             << "|" << storage.getAccessory(i).getName() << setw(20 - storage.getAccessory(i).getName().length())
              << "|" << storage.getAccessory(i).getQuantity() << setw(5 - to_string(storage.getAccessory(i).getQuantity()).length())
              << "|" << storage.getAccessory(i).getPrice() << setw(13 - to_string(storage.getAccessory(i).getPrice()).length())
              << "|" << storage.getAccessory(i).getWarrantyTime() << setw(17 - storage.getAccessory(i).getWarrantyTime().length()) << "|" << endl;
     }
-    cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
     fileInput.close();
 }
 
