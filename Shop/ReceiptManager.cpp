@@ -7,10 +7,6 @@ ReceiptManager::ReceiptManager() {
     this->receipt = nullptr;
 }
 
-//ReceiptManager::ReceiptManager(const ReceiptManager& rpt) {
-//    for (int i = 0; i < rpt.numberOfReceipt; i++)
-//        this->push(*(rpt.receipt + i));
-//}
 
 ReceiptManager::~ReceiptManager() {
     delete[] this->receipt;
@@ -243,7 +239,7 @@ tryAgain:
                 cout << "Guitar khong ton tai trong kho!";
                 break;
             }
-            cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl; //5, 10, 19, 11, 4, 12, 10
+            cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl;
             cout << "| STT |    ID    |    Thuong hieu    |    Ten    | SL |  Gia tien  | Bao hanh |" << endl;
             cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl;
             for (int i = 0 ; i < guitar.getNumberOfGuitar(); i++) {
@@ -288,7 +284,7 @@ tryAgain:
                 cout << "Phu kien khong ton tai trong kho!";
                 break;
             }
-            cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
+            cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
             cout << "| STT |    ID    |    Loai    |     Ten     | SL |  Gia tien  |    Bao hanh    |" << endl;
             cout << "+-----+----------+------------+-------------+----+------------+----------------+" << endl;
             for (int i = 0 ; i < accessory.getNumberOfAccessory(); i++) {

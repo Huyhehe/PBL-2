@@ -3,7 +3,6 @@
 #include <fstream>
 #include <iomanip>
 #include <string>
-//#include <windows.h>
 #include "ReceiptManager.h"
 #include "CommodityManager.h"
 #include "EmployeeManager.h"
@@ -12,7 +11,6 @@
 using namespace std;
 
 string toString(int x);
-//string setColor(int color);
 void employeeBoard(EmployeeManager&, string);
 void accessoryBoard(CommodityManager&, string);
 void guitarBoard(CommodityManager&, string);
@@ -29,7 +27,6 @@ void mainMenu(EmployeeManager&, CommodityManager&, ReceiptManager&);
 void mainMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptManager& receiptStored) {
     string choice;
     system("cls");
-    //system("Color 07");
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << "+                   GUITAR STORE                   +" << endl
          << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
@@ -164,7 +161,7 @@ bool checkContinue(string continueOption) {
 void receiptMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptManager& receiptStored) {
     tryAgain:
     system("cls");
-    //system("Color 0A");
+    
     string choice;
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << "+                   GUITAR STORE                   +" << endl
@@ -360,7 +357,7 @@ void receiptMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMan
 void employeeMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptManager& receiptStored) {
     tryAgain:
     system("cls");
-    //system("Color 07");
+    
     string choice;
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << "+                   GUITAR STORE                   +" << endl
@@ -410,7 +407,7 @@ void employeeMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMa
     switch(intChoice) {
         case 1: {
             system("cls");
-            //system("Color 0A");
+            
             cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
                  << "+                   GUITAR STORE                   +" << endl
                  << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
@@ -496,9 +493,6 @@ void employeeMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMa
             cout << "Nhap thong tin: ";
             getline(cin, str);
             manager.deleteEmployee(str, option);
-            //system("cls");
-            //cout << "Xoa nhan vien thanh cong!" << endl
-            //     << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
             cin >> continueOption;
             cin.ignore();
@@ -578,9 +572,6 @@ void employeeMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMa
             getline(cin, str);
             manager.updateData(str, option);
             manager.sort("Last Name");
-            //system("cls");
-            //cout << "Chinh sua thong tin nhan vien thanh cong!" << endl
-            //     << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
             cin >> continueOption;
             cin.ignore();
@@ -713,7 +704,7 @@ void employeeMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMa
 
 void storageMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptManager& receiptStored) {
     system("cls");
-    //system("Color 07");
+    
     string choice;
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << "+                   GUITAR STORE                   +" << endl
@@ -779,7 +770,7 @@ void storageMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMan
 void guitarMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptManager& receiptStored) {
     tryAgain:
     system("cls");
-    //system("Color 07");
+    
     string choice;
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << "+                   GUITAR STORE                   +" << endl
@@ -1061,7 +1052,7 @@ void guitarMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptMana
 void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptManager& receiptStored) {
     tryAgain:
     system("cls");
-    //system("Color 07");
+    
     string choice;
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << "+                   GUITAR STORE                   +" << endl
@@ -1111,7 +1102,7 @@ void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptM
     switch(intChoice) {
         case 1: {
             system("cls");
-            //system("Color 0A");
+            
             accessoryBoard(storage, "../Data/Accessory.txt");
             cout << "Ban co muon tiep tuc khong (Y/N): ";
             string continueOption;
@@ -1127,7 +1118,6 @@ void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptM
         }
         case 2: {
             system("cls");
-            // system("Color 0A");
             string str;
             string option;
             int choice;
@@ -1194,7 +1184,6 @@ void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptM
         }
         case 3: {
             system("cls");
-            // system("Color 0A");
             cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
                  << "+                   GUITAR STORE                   +" << endl
                  << "++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
@@ -1216,7 +1205,6 @@ void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptM
         }
         case 4: {
             system("cls");
-            // system("Color 0A");
             string str;
             string option;
             int choice;
@@ -1348,10 +1336,10 @@ void accessoryMenu(EmployeeManager& manager, CommodityManager& storage, ReceiptM
 void employeeBoard(EmployeeManager& manager, string fileName) {
     ifstream fileInput;
     fileInput.open(fileName, ios::in);
-    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl; //5, 10, 30, 11, 4, 11
+    cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
     cout << "| STT |    ID    |            Ho ten            | Ngay sinh | GT |    SDT    |" << endl;
     cout << "+-----+----------+------------------------------+-----------+----+-----------+" << endl;
-    //readData(manager, fileName);
+
     manager.sort("Last Name");
     for (int i = 0 ; i < manager.getNumberOfEmployee(); i++) {
         cout << "|" << toString(i + 1) << i + 1 << setw(3)
@@ -1368,10 +1356,10 @@ void employeeBoard(EmployeeManager& manager, string fileName) {
 void guitarBoard(CommodityManager& storage, string fileName) {
     ifstream fileInput;
     fileInput.open(fileName, ios::in);
-    cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl; //5, 10, 19, 11, 4, 12, 10
+    cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl;
     cout << "| STT |    ID    |    Thuong hieu    |    Ten    | SL |  Gia tien  | Bao hanh |" << endl;
     cout << "+-----+----------+-------------------+-----------+----+------------+----------+" << endl;
-    //readData(storage, "Guitar", fileName);
+
     storage.sort("Guitar", "Full Name");
     for (int i = 0 ; i < storage.getNumberOfGuitar(); i++) {
         cout << "|" << toString(i + 1) << i + 1 << setw(3)
@@ -1389,10 +1377,9 @@ void guitarBoard(CommodityManager& storage, string fileName) {
 void accessoryBoard(CommodityManager& storage, string fileName) {
     ifstream fileInput;
     fileInput.open(fileName, ios::in);
-    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl; //10, 12, 13, 4, 12, 16
+    cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
     cout << "| STT |    ID    |    Loai    |        Ten        | SL |  Gia tien  |    Bao hanh    |" << endl;
     cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
-    //readData(storage, "Accessory", fileName);
     storage.sort("Accessory", "Full Name");
     for (int i = 0 ; i < storage.getNumberOfAccessory(); i++) {
         cout << "|" << toString(i + 1) << i + 1<< setw(3)
@@ -1406,19 +1393,6 @@ void accessoryBoard(CommodityManager& storage, string fileName) {
     cout << "+-----+----------+------------+-------------------+----+------------+----------------+" << endl;
     fileInput.close();
 }
-
-//string setColor(int color)
-//{
-//	WORD colr;
-//     HANDLE out = GetStdHandle(STD_OUTPUT_HANDLE);
-//     CONSOLE_SCREEN_BUFFER_INFO info;
-//     if(GetConsoleScreenBufferInfo(out, &info))
-//     {
-//          colr = (info.wAttributes & 0xF0) + (color & 0x0F);
-//          SetConsoleTextAttribute(out, colr);
-//     }
-//     return "";
-//}
 
 string toString(int x) {
     string str;

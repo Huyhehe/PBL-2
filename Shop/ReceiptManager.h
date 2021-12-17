@@ -10,7 +10,6 @@
          int numberOfReceipt;
      public:
          ReceiptManager();
-         //ReceiptManager(const ReceiptManager&);
          ~ReceiptManager();
          int getNumberOfReceipt();
          void insert(Receipt, int);
