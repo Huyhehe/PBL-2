@@ -8,7 +8,7 @@ Thoi gian bao hanh: 1 nam
 Ma guitar: 1022881
 Thuong Hieu: Fender
 Ten guitar: CD-100
-So luong: 4
+So luong: 3
 Gia: 7000000
 Thoi gian bao hanh: 1 nam
 
@@ -29,11 +29,11 @@ Thoi gian bao hanh: 1 nam
 Ma guitar: 1022004
 Thuong Hieu: Yamaha
 Ten guitar: DR-100
-So luong: 4
+So luong: 2
 Gia: 4000000
 Thoi gian bao hanh: 1 nam
 
-Ma guitar: 191203
+Ma guitar: 1022021
 Thuong Hieu: Yamaha
 Ten guitar: YZ-100
 So luong: 3

@@ -86,6 +86,34 @@ Hang hoa:
 Tong tien: 200000
 Ngay xuat hoa don: 07/02/2021
 
+Ma hoa don: 1899211
+Ten khach hang: Minh Hieu
+Hang hoa: 
+	+ Guitar
+	Ma guitar: 1022004
+	Ten thuong hieu: Yamaha
+	Ten guitar: DR-100
+	So luong guitar: 2
+	Gia: 4000000
+	Thoi gian bao hanh: 1 nam
+
+Tong tien: 8000000
+Ngay xuat hoa don: 07/02/2021
+
+Ma hoa don: 1289930
+Ten khach hang: Minh Hieu
+Hang hoa: 
+	+ Guitar
+	Ma guitar: 1022881
+	Ten thuong hieu: Fender
+	Ten guitar: CD-100
+	So luong guitar: 1
+	Gia: 7000000
+	Thoi gian bao hanh: 1 nam
+
+Tong tien: 7000000
+Ngay xuat hoa don: 07/02/2021
+
 Ma hoa don: 1891230
 Ten khach hang: Hung
 Hang hoa: 

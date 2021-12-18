@@ -922,10 +922,18 @@ void CommodityManager::addGuitar() {
         guitar.setName(str);
     cout << "Nhap so luong guitar: ";
     getline(cin, str);
+    if (str < "0" || str > "9") {
+        cout << str << " is not number" << endl;
+        return;
+    }
     if (str != "")
         guitar.setQuantity(stoi(str));
     cout << "Nhap gia cua guitar: ";
     getline(cin, str);
+    if (str < "0" || str > "9") {
+        cout << str << " is not number" << endl;
+        return;
+    }
     if (str != "")
         guitar.setPrice(stoi(str));
     cout << "Nhap thoi gian bao hanh: ";
@@ -952,10 +960,18 @@ void CommodityManager::addAccessory() {
         accessory.setName(str);
     cout << "Nhap so luong phu kien: ";
     getline(cin, str);
+    if (str < "0" || str > "9") {
+        cout << str << " is not number" << endl;
+        return;
+    }
     if (str != "")
         accessory.setQuantity(stoi(str));
     cout << "Nhap gia cua phu kien: ";
     getline(cin, str);
+    if (str < "0" || str > "9") {
+        cout << str << " is not number" << endl;
+        return;
+    }
     if (str != "")
         accessory.setPrice(stoi(str));
     cout << "Nhap thoi gian bao hanh: ";

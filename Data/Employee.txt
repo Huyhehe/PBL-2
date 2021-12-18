@@ -10,8 +10,8 @@ Ngay het hop dong lam viec: 08/04/2022
 La nhan vien toan thoi gian: false
 Tien luong: 3000000
 
-Ma nhan vien: 123
-Ho ten nhan vien: Hoang Anh
+Ma nhan vien: 102230222
+Ho ten nhan vien: Le Hoang Anh
 Ngay sinh: 09/11/2021
 Gioi tinh: Nam
 So dien thoai: 01928123
@@ -22,8 +22,8 @@ Ngay het hop dong lam viec: 07/11/2022
 La nhan vien toan thoi gian: false
 Tien luong: 8000000
 
-Ma nhan vien: 11823
-Ho ten nhan vien: Minh Hieu
+Ma nhan vien: 101130882
+Ho ten nhan vien: Ho Minh Hieu
 Ngay sinh: 08/11/2021
 Gioi tinh: Nam
 So dien thoai: 091021
@@ -34,8 +34,8 @@ Ngay het hop dong lam viec: 08/12/2024
 La nhan vien toan thoi gian: true
 Tien luong: 788888
 
-Ma nhan vien: 102912
-Ho ten nhan vien: Hieu
+Ma nhan vien: 102236782
+Ho ten nhan vien: Hoang Van Hieu
 Ngay sinh: 01/02/2001
 Gioi tinh: Nam
 So dien thoai: 91283
@@ -46,7 +46,7 @@ Ngay het hop dong lam viec: 08/02/2022
 La nhan vien toan thoi gian: true
 Tien luong: 7000000
 
-Ma nhan vien: 10229910
+Ma nhan vien: 201230882
 Ho ten nhan vien: Minh Hieu
 Ngay sinh: 08/12/2000
 Gioi tinh: Nam
@@ -58,7 +58,7 @@ Ngay het hop dong lam viec: 09/12/2023
 La nhan vien toan thoi gian: true
 Tien luong: 7000000
 
-Ma nhan vien: 102230123
+Ma nhan vien: 102890123
 Ho ten nhan vien: Ho Anh Kim
 Ngay sinh: 02/05/1999
 Gioi tinh: nam
@@ -70,7 +70,7 @@ Ngay het hop dong lam viec: 08/04/2023
 La nhan vien toan thoi gian: true
 Tien luong: 5000000
 
-Ma nhan vien: 102230113
+Ma nhan vien: 102232213
 Ho ten nhan vien: Nguyen Kim
 Ngay sinh: 10/01/1999
 Gioi tinh: Nu
@@ -82,7 +82,7 @@ Ngay het hop dong lam viec: 12/04/2023
 La nhan vien toan thoi gian: true
 Tien luong: 5000000
 
-Ma nhan vien: 102230114
+Ma nhan vien: 112230114
 Ho ten nhan vien: Hoang Thai Linh
 Ngay sinh: 02/05/2000
 Gioi tinh: nam
@@ -106,8 +106,20 @@ Ngay het hop dong lam viec: 07/11/2023
 La nhan vien toan thoi gian: true
 Tien luong: 10000000
 
-Ma nhan vien: 102230918
-Ho ten nhan vien: Truc
+Ma nhan vien: 1020021
+Ho ten nhan vien: Nam
+Ngay sinh: 02/01/2002
+Gioi tinh: Nam
+So dien thoai: 090192831
+Email: hiaks@gmail.com
+Dia chi: 4 Nguyen Hoang
+Ngay bat dau lam viec: 09/02/2002
+Ngay het hop dong lam viec: 09/03/2022
+La nhan vien toan thoi gian: false
+Tien luong: 7888880
+
+Ma nhan vien: 102221882
+Ho ten nhan vien: Nguyen Thi Truc
 Ngay sinh: 02/05/1998
 Gioi tinh: Nu
 So dien thoai: 0905199012
